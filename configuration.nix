@@ -66,6 +66,7 @@
     postman
     python314
     rustup
+    texliveFull
 
     _1password-cli
     _1password-gui
