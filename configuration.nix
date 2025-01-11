@@ -16,6 +16,7 @@
   };
   boot.plymouth.enable = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernel.sysctl = { "vm.swappiness" = 10; };
 
   # Networking
   networking.hostName = "Ramikw";
@@ -52,6 +53,7 @@
     unzip
     wget
     wl-clipboard
+    zsh-powerlevel10k
 
     delta
     dotnet-sdk
@@ -70,6 +72,7 @@
     discord
     drawio
     firefox
+    kdePackages.kclock
     libreoffice
     megasync
     solaar
@@ -130,6 +133,7 @@
       plugins = ["git" "man" "colored-man-pages" "colorize" "command-not-found"];
       theme = "powerlevel10k/powerlevel10k";
     };
+    promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
   };
   users.defaultUserShell = pkgs.zsh;
 
@@ -151,6 +155,18 @@
     jack.enable = true;
     pulse.enable = true;
     socketActivation = true;
+  };
+
+  # Automatic Garbage Collection
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
+  # Auto system update
+  system.autoUpgrade = {
+    enable = true;
   };
 
   # This value determines the NixOS release from which the default
