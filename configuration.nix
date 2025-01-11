@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -36,7 +36,7 @@
     isNormalUser = true;
     description = "Ramikw";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = [];
   };
 
   # Packages
@@ -67,6 +67,7 @@
     python314
     rustup
 
+    _1password-cli
     _1password-gui
     anki
     discord
@@ -91,7 +92,7 @@
   hardware.bluetooth.enable = true;
 
   # Environment variables
-  environment.sessionVariables = rec {
+  environment.sessionVariables = {
     QT_QPA_PLATFORM = "wayland";
     QT_SCALE_FACTOR = 1;
   };
@@ -114,6 +115,13 @@
       user.name  = "Rami Alkawadri";
       user.email = "ramialkawadri@hotmail.com";
       credential.helper = "store";
+      delta = {
+        line-numbers = true;
+        paging = "never";
+        dark = true;
+        syntax-theme = "Visual Studio Dark+";
+        side-by-side = true;
+      };
     };
   };
 
@@ -131,7 +139,6 @@
     ohMyZsh = {
       enable = true;
       plugins = ["git" "man" "colored-man-pages" "colorize" "command-not-found"];
-      theme = "powerlevel10k/powerlevel10k";
     };
     promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
   };
