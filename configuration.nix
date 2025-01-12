@@ -61,7 +61,6 @@
     htop
     jdk
     lazygit
-    neovim
     nodejs_23
     postman
     python314
@@ -79,6 +78,25 @@
     timeshift
     vlc
     vscode
+
+    # Neovim lsps and treesitter
+    vimPlugins.nvim-treesitter.withAllGrammars
+    bash-language-server
+    clang-tools
+    csharp-ls
+    dockerfile-language-server-nodejs
+    emmet-ls
+    eslint
+    jdt-language-server
+    ltex-ls
+    lua-language-server
+    nil
+    python312Packages.python-lsp-server
+    rust-analyzer
+    texlab
+    typescript-language-server
+    vim-language-server
+    vscode-langservers-extracted
   ];
   fonts.packages = with pkgs; [ 
     (nerdfonts.override { fonts = [ "Hack" ]; })
@@ -92,6 +110,9 @@
   };
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
+  programs.neovim = {
+    enable = true;
+  };
 
   # Other settings
   services.cron.enable = true;
