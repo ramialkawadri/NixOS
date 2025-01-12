@@ -69,12 +69,9 @@
     rustup
     texliveFull
 
-    _1password-cli
-    _1password-gui
     anki
     discord
     drawio
-    firefox
     kdePackages.kclock
     libreoffice
     megasync
@@ -87,6 +84,14 @@
     (nerdfonts.override { fonts = [ "Hack" ]; })
   ];
   programs.partition-manager.enable = true;
+  programs.firefox = {
+    enable = true;
+    preferences = {
+      "widget.use-xdg-desktop-portal.file-picker" = 1;
+    };
+  };
+  programs._1password.enable = true;
+  programs._1password-gui.enable = true;
 
   # Other settings
   services.cron.enable = true;
@@ -95,7 +100,7 @@
 
   # Environment variables
   environment.sessionVariables = {
-    QT_QPA_PLATFORM = "wayland";
+    QT_QPA_PLATFORM = "xcb";
     QT_SCALE_FACTOR = 1;
   };
   environment.variables = {
