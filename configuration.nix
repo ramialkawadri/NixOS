@@ -16,7 +16,7 @@
   };
   boot.plymouth.enable = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernel.sysctl = { "vm.swappiness" = 10; };
+  boot.kernel.sysctl = { "vm.swappiness" = 4; };
 
   # Networking
   networking.hostName = "Ramikw";
