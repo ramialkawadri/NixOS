@@ -42,7 +42,6 @@
   # Packages
   nixpkgs.config.allowUnfree = true;
   services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
   environment.systemPackages = with pkgs; [
     lshw
@@ -77,6 +76,7 @@
     megasync
     solaar
     thunderbird
+    timeshift
     vlc
     vscode
   ];
@@ -100,7 +100,6 @@
 
   # Environment variables
   environment.sessionVariables = {
-    QT_QPA_PLATFORM = "xcb";
     QT_SCALE_FACTOR = 1;
   };
   environment.variables = {
