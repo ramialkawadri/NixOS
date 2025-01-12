@@ -102,22 +102,23 @@
     (nerdfonts.override { fonts = [ "Hack" ]; })
   ];
   programs.partition-manager.enable = true;
+  programs._1password.enable = true;
+  programs._1password-gui.enable = true;
+  programs.neovim.enable = true;
+
+  # Firefox
   programs.firefox = {
     enable = true;
     preferences = {
       "widget.use-xdg-desktop-portal.file-picker" = 1;
     };
   };
-  programs._1password.enable = true;
-  programs._1password-gui.enable = true;
-  programs.neovim = {
-    enable = true;
-  };
 
   # Other settings
   services.cron.enable = true;
   networking.firewall.enable = true;
   hardware.bluetooth.enable = true;
+  hardware.logitech.wireless.enable = true;
 
   # Environment variables
   environment.sessionVariables = {
