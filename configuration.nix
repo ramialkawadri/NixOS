@@ -15,12 +15,17 @@
     efiSupport = true;
   };
   boot.plymouth.enable = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Kernel
   boot.kernel.sysctl = { "vm.swappiness" = 4; };
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [ "quiet" ];
+  boot.blacklistedKernelModules = [ "uvcvideo" "nouveau" "r8169" ];
 
   # Networking
   networking.hostName = "Ramikw";
   networking.networkmanager.enable = true;
+  networking.firewall.enable = true;
 
   # Language
   time.timeZone = "Europe/Oslo";
@@ -61,7 +66,7 @@
     htop
     jdk
     lazygit
-    nodejs_23
+    nodejs
     postman
     python314
     rustup
@@ -116,7 +121,6 @@
 
   # Other settings
   services.cron.enable = true;
-  networking.firewall.enable = true;
   hardware.bluetooth.enable = true;
   hardware.logitech.wireless.enable = true;
 
