@@ -74,7 +74,6 @@
     anki
     discord
     drawio
-    kdePackages.kclock
     libreoffice
     megasync
     solaar
@@ -82,6 +81,12 @@
     timeshift
     vlc
     vscode
+
+    kdePackages.kcalc
+    kdePackages.kcharselect
+    kdePackages.kclock
+    kdePackages.kcolorchooser
+    kdePackages.ksystemlog
 
     # Neovim lsps and treesitter
     vimPlugins.nvim-treesitter.withAllGrammars
