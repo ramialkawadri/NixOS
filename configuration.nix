@@ -60,6 +60,7 @@
     wl-clipboard
     zsh-powerlevel10k
 
+    cargo
     delta
     dotnet-sdk
     gcc
@@ -69,7 +70,6 @@
     nodejs
     postman
     python314
-    rustup
     texliveFull
 
     anki
@@ -109,7 +109,10 @@
   programs.partition-manager.enable = true;
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
-  programs.neovim.enable = true;
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
 
   # Firefox
   programs.firefox = {
@@ -123,13 +126,12 @@
   services.cron.enable = true;
   hardware.bluetooth.enable = true;
   hardware.logitech.wireless.enable = true;
+  xdg.portal.enable = true;
 
   # Environment variables
   environment.sessionVariables = {
     QT_SCALE_FACTOR = 1;
-  };
-  environment.variables = {
-    EDITOR = "nvim";
+    GTK_USE_PORTAL = 1;
   };
 
   # Printing
