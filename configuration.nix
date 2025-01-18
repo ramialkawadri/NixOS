@@ -70,6 +70,7 @@
     nodejs
     postman
     python314
+    rustc
 
     anki
     discord
@@ -171,9 +172,10 @@
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      update = "sudo nixos-rebuild switch";
-      upgrade = "sudo nixos-rebuild switch --upgrade";
+      update = "sudo nixos-rebuild switch && reload-apps";
+      upgrade = "sudo nixos-rebuild switch --upgrade && reload-apps";
       clean = "sudo nix-collect-garbage --delete-old; sudo /run/current-system/bin/switch-to-configuration boot";
+      reload-apps = "sed -i 's/file:\\/\\/\\/nix\\/store\\/[^\\/]*\\/share\\/applications\\//applications:/gi' ~/.config/plasma-org.kde.plasma.desktop-appletsrc && systemctl restart --user plasma-plasmashell";
       tx = "tmuxinator";
     };
     histSize = 10000;
