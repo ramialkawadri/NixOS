@@ -20,7 +20,7 @@
   boot.kernel.sysctl = { "vm.swappiness" = 4; };
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [ "quiet" ];
-  boot.blacklistedKernelModules = [ "uvcvideo" "nouveau" "r8169" ];
+  boot.blacklistedKernelModules = [ "uvcvideo" "nouveau" ];
 
   # Networking
   networking.hostName = "Ramikw";
@@ -70,7 +70,6 @@
     nodejs
     postman
     python314
-    texliveFull
 
     anki
     discord
@@ -105,6 +104,7 @@
   ];
   fonts.packages = with pkgs; [ 
     (nerdfonts.override { fonts = [ "Hack" ]; })
+    corefonts
   ];
   programs.partition-manager.enable = true;
   programs._1password.enable = true;
@@ -182,7 +182,7 @@
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = false;
+    powerManagement.enable = true;
     open = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
