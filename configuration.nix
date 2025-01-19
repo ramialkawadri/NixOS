@@ -131,6 +131,7 @@
     enable = true;
     preferences = {
       "widget.use-xdg-desktop-portal.file-picker" = 1;
+      "widget.use-xdg-desktop-portal.mime-handler" = 1;
     };
   };
 
@@ -144,6 +145,7 @@
   environment.sessionVariables = {
     QT_SCALE_FACTOR = 1;
     GTK_USE_PORTAL = 1;
+    NIXOS_OZONE_WL = 1;
   };
 
   # Printing
