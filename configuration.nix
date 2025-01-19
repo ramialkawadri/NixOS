@@ -61,6 +61,7 @@
     zsh-powerlevel10k
 
     cargo
+    clippy
     delta
     dotnet-sdk
     gcc
