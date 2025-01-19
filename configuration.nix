@@ -97,6 +97,7 @@
     dockerfile-language-server-nodejs
     emmet-ls
     eslint
+    gdb
     jdt-language-server
     ltex-ls
     lua-language-server
