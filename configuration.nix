@@ -71,6 +71,7 @@
     postman
     python314
     rustc
+    rustfmt
 
     anki
     discord
@@ -92,6 +93,7 @@
     # Neovim lsps and treesitter
     vimPlugins.nvim-treesitter.withAllGrammars
     bash-language-server
+    bibtex-tidy
     clang-tools
     csharp-ls
     dockerfile-language-server-nodejs
@@ -101,7 +103,9 @@
     jdt-language-server
     ltex-ls
     lua-language-server
+    netcoredbg
     nil
+    python312Packages.debugpy
     python312Packages.python-lsp-server
     rust-analyzer
     texlab
