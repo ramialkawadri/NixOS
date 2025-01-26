@@ -1,26 +1,38 @@
 { config, pkgs, ... }:
 
 {
+  # TODO: nvim, snip files, tmux
   home.username = "ramikw";
   home.homeDirectory = "/home/ramikw";
 
-  # link the configuration file in current directory to the specified location in home directory
-  # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
+  home.file.".config/vlc" = {
+    source = ./dotfiles/vlc;
+    recursive = true;
+    force = true;
+  };
 
-  # link all files in `./scripts` to `~/.config/i3/scripts`
-  # home.file.".config/i3/scripts" = {
-  #   source = ./scripts;
-  #   recursive = true;   # link recursively
-  #   executable = true;  # make all files executable
-  # };
+  home.file.".config/autostart" = {
+    source = ./dotfiles/autostart;
+    recursive = true;
+    force = true;
+  };
 
-  # encode the file content in nix configuration file directly
-  # home.file.".xxx".text = ''
-  #     xxx
-  # '';
+  home.file.".config/katerc" = {
+    source = ./dotfiles/katerc;
+    force = true;
+  };
+
+  home.file.".config/okularpartrc" = {
+    source = ./dotfiles/okularpartrc;
+    force = true;
+  };
+
+  home.file.".config/kglobalshortcutsrc" = {
+    source = ./dotfiles/kglobalshortcutsrc;
+    force = true;
+  };
 
   home.packages = with pkgs; [
-    tmux
     tmuxinator
 
     anki
@@ -76,6 +88,11 @@
     vim-language-server
     vscode-langservers-extracted
   ];
+
+
+  programs.tmux = {
+    enable = true;
+  };
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
