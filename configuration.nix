@@ -50,78 +50,24 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
   environment.systemPackages = with pkgs; [
+    htop
     lshw
     neofetch
     pciutils
     ripgrep
-    tmux
-    tmuxinator
     unzip
+    vimPlugins.nvim-treesitter.withAllGrammars
     wget
     wl-clipboard
     zsh-powerlevel10k
-
-    cargo
-    clippy
-    delta
-    dotnet-sdk
-    gcc
-    htop
-    jdk
-    lazygit
-    nodejs
-    postman
-    python314
-    rustc
-    rustfmt
-
-    anki
-    discord
-    drawio
-    libreoffice
-    megasync
-    solaar
-    thunderbird
-    timeshift
-    vlc
-    vscode
-
-    kdePackages.kcalc
-    kdePackages.kcharselect
-    kdePackages.kclock
-    kdePackages.kcolorchooser
-    kdePackages.ksystemlog
-
-    # Neovim lsps and treesitter
-    vimPlugins.nvim-treesitter.withAllGrammars
-    bash-language-server
-    bibtex-tidy
-    clang-tools
-    csharp-ls
-    dockerfile-language-server-nodejs
-    emmet-ls
-    eslint
-    gdb
-    jdt-language-server
-    ltex-ls
-    lua-language-server
-    netcoredbg
-    nil
-    python312Packages.debugpy
-    python312Packages.python-lsp-server
-    rust-analyzer
-    texlab
-    typescript-language-server
-    vim-language-server
-    vscode-langservers-extracted
   ];
   fonts.packages = with pkgs; [ 
     (nerdfonts.override { fonts = [ "Hack" ]; })
     corefonts
   ];
-  programs.partition-manager.enable = true;
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
+  programs.partition-manager.enable = true;
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -157,6 +103,28 @@
     openFirewall = true;
   };
 
+  # Zsh
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+    shellAliases = {
+      update = "sudo nixos-rebuild switch && reload-apps";
+      upgrade = "sudo nix flake update && sudo nixos-rebuild switch --upgrade && reload-apps";
+      clean = "sudo nix-collect-garbage --delete-old; sudo /run/current-system/bin/switch-to-configuration boot";
+      reload-apps = "sed -i 's/file:\\/\\/\\/nix\\/store\\/[^\\/]*\\/share\\/applications\\//applications:/gi' ~/.config/plasma-org.kde.plasma.desktop-appletsrc && systemctl restart --user plasma-plasmashell";
+      tx = "tmuxinator";
+    };
+    histSize = 10000;
+    ohMyZsh = {
+      enable = true;
+      plugins = ["git" "man" "colored-man-pages" "colorize" "command-not-found"];
+    };
+    promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+  };
+  users.defaultUserShell = pkgs.zsh;
+
   # Git
   programs.git = {
     enable = true;
@@ -173,28 +141,6 @@
       };
     };
   };
-
-  # Zsh
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-    shellAliases = {
-      update = "sudo nixos-rebuild switch && reload-apps";
-      upgrade = "sudo nixos-rebuild switch --upgrade && reload-apps";
-      clean = "sudo nix-collect-garbage --delete-old; sudo /run/current-system/bin/switch-to-configuration boot";
-      reload-apps = "sed -i 's/file:\\/\\/\\/nix\\/store\\/[^\\/]*\\/share\\/applications\\//applications:/gi' ~/.config/plasma-org.kde.plasma.desktop-appletsrc && systemctl restart --user plasma-plasmashell";
-      tx = "tmuxinator";
-    };
-    histSize = 10000;
-    ohMyZsh = {
-      enable = true;
-      plugins = ["git" "man" "colored-man-pages" "colorize" "command-not-found"];
-    };
-    promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-  };
-  users.defaultUserShell = pkgs.zsh;
 
   # Nvidia-driver
   services.xserver.videoDrivers = ["nvidia"];
