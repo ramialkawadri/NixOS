@@ -23,7 +23,7 @@
   boot.blacklistedKernelModules = [ "uvcvideo" "nouveau" ];
 
   # Networking
-  networking.hostName = "Ramikw";
+  networking.hostName = "ramikw";
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
 
@@ -39,12 +39,13 @@
   # Other
   users.users.ramikw = {
     isNormalUser = true;
-    description = "Ramikw";
+    description = "ramikw";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = [];
   };
 
   # Packages
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
