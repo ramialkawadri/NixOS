@@ -46,6 +46,7 @@
     vlc
     vscode
 
+    kdePackages.filelight
     kdePackages.kcalc
     kdePackages.kcharselect
     kdePackages.kclock
