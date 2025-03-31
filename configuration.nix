@@ -19,7 +19,7 @@
   # Kernel
   boot.kernel.sysctl = { "vm.swappiness" = 4; };
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelParams = [ "quiet" ];
+  boot.kernelParams = [ "quiet" "acpi_osi=\"!Windows 2015\"" ];
   boot.blacklistedKernelModules = [ "uvcvideo" "nouveau" ];
 
   # Networking
@@ -174,6 +174,12 @@
   system.autoUpgrade = {
     enable = true;
   };
+
+  # This and the kernal param "acpi_osi=\"!Windows 2015\"" fixes sleep issues for Gigabyte.
+  # https://wiki.archlinux.org/title/Power_management/Wakeup_triggers#Gigabyte_motherboards
+  services.udev.extraRules = ''
+      ACTION=="add" SUBSYSTEM=="pci" ATTR{vendor}=="0x1022" ATTR{device}=="0x1483" ATTR{power/wakeup}="disabled"
+  '';
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
