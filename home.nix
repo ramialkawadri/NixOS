@@ -38,8 +38,10 @@
     anki
     discord
     drawio
+    krita
     libreoffice
     megasync
+    shotcut
     solaar
     thunderbird
     timeshift
