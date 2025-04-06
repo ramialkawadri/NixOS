@@ -44,7 +44,6 @@
     shotcut
     solaar
     thunderbird
-    timeshift
     vlc
     vscode
 
