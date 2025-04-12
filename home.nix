@@ -68,6 +68,7 @@
     rustfmt
 
     # Neovim lsps and treesitter
+    tree-sitter
     vimPlugins.nvim-treesitter.withAllGrammars
     bash-language-server
     bibtex-tidy
