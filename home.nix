@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-  # TODO: nvim, snip files, tmux
   home.username = "ramikw";
   home.homeDirectory = "/home/ramikw";
 
