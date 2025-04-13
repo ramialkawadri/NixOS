@@ -56,6 +56,7 @@
     neofetch
     pciutils
     ripgrep
+    tldr
     unzip
     vimPlugins.nvim-treesitter.withAllGrammars
     wget
