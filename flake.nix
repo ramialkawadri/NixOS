@@ -7,13 +7,18 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    solaar = {
+      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = { nixpkgs, home-manager, solaar, ... }: {
     nixosConfigurations = {
       ramikw = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+            solaar.nixosModules.default
           ./configuration.nix
 
           home-manager.nixosModules.home-manager

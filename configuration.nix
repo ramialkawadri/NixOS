@@ -182,6 +182,14 @@
       ACTION=="add" SUBSYSTEM=="pci" ATTR{vendor}=="0x1022" ATTR{device}=="0x1483" ATTR{power/wakeup}="disabled"
   '';
 
+  services.solaar = {
+    enable = true;
+    package = pkgs.solaar;
+    window = "hide";
+    batteryIcons = "regular";
+    extraArgs = "";
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

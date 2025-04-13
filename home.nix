@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # TODO: nvim, snip files, tmux
@@ -42,7 +42,6 @@
     libreoffice
     megasync
     shotcut
-    solaar
     thunderbird
     vlc
     vscode
