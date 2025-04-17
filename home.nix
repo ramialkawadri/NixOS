@@ -46,7 +46,7 @@
     vscode
 
     kdePackages.filelight
-    kdePackages.kcalc
+    kdePackages.kalk
     kdePackages.kcharselect
     kdePackages.kclock
     kdePackages.kcolorchooser
