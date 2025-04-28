@@ -47,11 +47,10 @@
   # Packages
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
   services.flatpak.enable = true;
   environment.systemPackages = with pkgs; [
     htop
+    kitty
     lshw
     neofetch
     pciutils
@@ -74,6 +73,11 @@
     enable = true;
     defaultEditor = true;
   };
+
+  # Hyprland
+  programs.hyprland.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.xserver.displayManager.sddm.wayland.enable = true;
 
   # Firefox
   programs.firefox = {
@@ -112,10 +116,9 @@
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      update = "sudo nixos-rebuild switch && reload-apps";
-      upgrade = "sudo nix flake update && sudo nixos-rebuild switch --upgrade && reload-apps";
+      update = "sudo nixos-rebuild switch";
+      upgrade = "sudo nix flake update && sudo nixos-rebuild switch --upgrade";
       clean = "sudo nix-collect-garbage --delete-old; sudo /run/current-system/bin/switch-to-configuration boot";
-      reload-apps = "sed -i 's/file:\\/\\/\\/nix\\/store\\/[^\\/]*\\/share\\/applications\\//applications:/gi' ~/.config/plasma-org.kde.plasma.desktop-appletsrc && systemctl restart --user plasma-plasmashell";
       tx = "tmuxinator";
     };
     histSize = 10000;
