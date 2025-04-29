@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -81,6 +81,16 @@
     wayland.enable = true;
     sugarCandyNix = {
         enable = true;
+        settings = {
+          Background = lib.cleanSource ./imgs/background.jpg;
+          DimBackgroundImage = 0.4;
+          ScaleImageCropped = true;
+          ScreenWidth = 3840;
+          ScreenHeight = 2160;
+          Font = "Hack";
+          RoundCorners = 6;
+          AccentColor = "#80a1be";
+        };
     };
   };
 

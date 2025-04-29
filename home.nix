@@ -10,8 +10,8 @@
     force = true;
   };
 
-  home.file.".config/autostart" = {
-    source = ./dotfiles/autostart;
+  home.file."Pictures/NixOS" = {
+    source = ./imgs;
     recursive = true;
     force = true;
   };
@@ -135,13 +135,11 @@
   };
 
   # TODO: move to own file
-  # TODO: move to black theme
-
   services.hyprpaper = {
     enable = true;
     settings = {
-      preload = [ "~/Pictures/background.jpg" ];
-      wallpaper = [ ",~/Pictures/background.jpg" ];
+      preload = [ "~/Pictures/NixOS/background.jpg" ];
+      wallpaper = [ ",~/Pictures/NixOS/background.jpg" ];
     };
   };
 
@@ -359,7 +357,6 @@
     margin: 0 4px;
     color: #fff;
 }
-
       '';
   };
 
