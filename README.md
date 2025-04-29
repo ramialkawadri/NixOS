@@ -4,5 +4,3 @@
 
 # Links
 - Install: https://nixos.org/manual/nixos/stable/#sec-installation-manual
-
-<!--TODO: https://gitlab.com/Pummelfisch/future-cyan-hyprcursor-->

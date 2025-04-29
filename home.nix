@@ -16,6 +16,20 @@
     force = true;
   };
 
+  home.pointerCursor = {
+    name = "bibata-cursors";
+    package = pkgs.bibata-cursors;
+
+    size = 22;
+
+    gtk.enable = true;
+
+    x11 = {
+      enable = true;
+      defaultCursor = "Bibata-Modern-Classic";
+    };
+  };
+
   home.packages = with pkgs; [
     tmuxinator
 
@@ -87,6 +101,28 @@
     hyprpaper
   ];
 
+  # Start dark theme
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme.name = "adwaita";
+    style.name = "adwaita-dark";
+  };
+  # End dark theme
+
   programs.tmux.enable = true;
 
   programs.kitty = {
@@ -114,10 +150,10 @@
     settings = {
         global = {
             font = "HackNerdFont 12";
-            foreground = "#000";
-            frame_color = "#1971c2";
+            foreground = "#eee";
+            frame_color = "#58a4e9";
             separator_color= "frame";
-            background = "#F5F5F5";
+            background = "#000";
             monitor = 0;
             follow = "mouse";
             width = 320;
@@ -138,8 +174,9 @@
             sort = "yes";
             idle_threshold = 120;
             line_height = 0;
-            markup = "full";
-            format = "%s %p\n%b";
+            markup = "yes";
+            plain_text = "no";
+            format = "<b>%s</b>\n%b";
             alignment = "left";
             vertical_alignment = "center";
             show_age_threshold = 60;
@@ -188,225 +225,141 @@
           ];
 
           network = {
-              format = "{ifname}";
-              format-wifi = "{essid} ({signalStrength}%) ";
-              format-ethernet = "󰛳";
-              format-disconnected = "󰅛";
-              tooltip-format = "{ifname} via {gwaddr} ";
-              tooltip-format-wifi = "{essid} ({signalStrength}%) ";
-              tooltip-format-ethernet = "{ifname} ";
-              tooltip-format-disconnected = "Disconnected";
-              max-length = 50;
+            format = "{ifname}";
+            format-wifi = "{essid} ({signalStrength}%) ";
+            format-ethernet = "󰛳";
+            format-disconnected = "󰅛";
+            tooltip-format = "{ifname} via {gwaddr} ";
+            tooltip-format-wifi = "{essid} ({signalStrength}%) ";
+            tooltip-format-ethernet = "{ifname} ";
+            tooltip-format-disconnected = "Disconnected";
+            max-length = 50;
           };
 
           "hyprland/workspaces" = {
-              on-click = "activate";
-              on-scroll-up = "hyprctl dispatch workspace e-1";
-              on-scroll-down = "hyprctl dispatch workspace e+1";
+            on-click = "activate";
+            on-scroll-up = "hyprctl dispatch workspace e-1";
+            on-scroll-down = "hyprctl dispatch workspace e+1";
           };
 
-          tray = {
-              spacing = 12;
-          };
+          tray.spacing = 12;
 
           clock = {
-              tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-              format = "{:%Y/%m/%d - %H:%M}";
+            tooltip-format = "<tt><small>{calendar}</small></tt>";
+            format = "{:%Y/%m/%d - %H:%M}";
+
+            calendar = {
+              mode = "year";
+              mode-mon-col = 3;
+              weeks-pos = "right";
+              on-scroll = 1;
+              format = {
+                months = "<span color='#ffead3'><b>{}</b></span>";
+                days = "<span color='#ecc6d9'><b>{}</b></span>";
+                weeks = "<span color='#99ffdd'><b>W{}</b></span>";
+                weekdays = "<span color='#ffcc66'><b>{}</b></span>";
+                today = "<span color='#ff6699'><b><u>{}</u></b></span>";
+              };
+            };
           };
 
           pulseaudio = {
-              format = "{volume}% {icon} ";
-              format-bluetooth = "{volume}% {icon} {format_source}";
-              format-bluetooth-muted = " {icon} {format_source}";
-              format-muted = " {format_source}";
-              format-source = "{volume}% ";
-              format-source-muted = "";
-              format-icons = {
-                  headphone = "";
-                  hands-free = "";
-                  headset = "";
-                  phone = "";
-                  portable = "";
-                  car = "";
-                  default = ["" "" ""];
-              };
-              on-click = "pavucontrol";
+            format = "{volume}% {icon} ";
+            format-bluetooth = "{volume}% {icon} {format_source}";
+            format-bluetooth-muted = " {icon} {format_source}";
+            format-muted = " {format_source}";
+            format-source = "{volume}% ";
+            format-source-muted = "";
+            format-icons = {
+              headphone = "";
+              hands-free = "";
+              headset = "";
+              phone = "";
+              portable = "";
+              car = "";
+              default = ["" "" ""];
+            };
+            on-click = "pavucontrol";
           };
 
           "custom/media" = {
-              format = "{icon}  {}";
-              escape = true;
-              return-type = "json";
-              max-length = 10;
-              on-click = "playerctl play-pause";
-              smooth-scrolling-threshold = 10;
-              on-scroll-up = "playerctl next";
-              on-scroll-down = "playerctl previous";
-              exec = "$HOME/.config/waybar/mediaplayer.py 2> /dev/null";
+            format = "{icon}  {}";
+            escape = true;
+            return-type = "json";
+            max-length = 10;
+            on-click = "playerctl play-pause";
+            smooth-scrolling-threshold = 10;
+            on-scroll-up = "playerctl next";
+            on-scroll-down = "playerctl previous";
+            exec = "$HOME/.config/waybar/mediaplayer.py 2> /dev/null";
           };
 
           "custom/shutdown" = {
-              format = "";
-              on-click = "sleep 0.1 && ~/.config/rofi/powermenu/powermenu.sh";
+            format = "";
+            on-click = "sleep 0.1 && ~/.config/rofi/powermenu/powermenu.sh";
           };
         };
       };
+      # Copied from: https://github.com/mechakotik/dots/tree/main/.config/waybar
       style = ''
-        * {
-            font-family: HackNerdFont;
-            font-size: 12px;
-        }
+@define-color foreground #eeeeee;
+@define-color foreground-inactive #aaaaaa;
+@define-color background #000000;
 
-        window#waybar {
-            background-color: rgba(245, 245, 245, 0.92);
-            color: #000;
-            transition-property: background-color;
-            transition-duration: .1s;
-            padding: 0 2px;
-        }
+* {
+    font-family: HackNerdFont;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
 
-        window#waybar.hidden {
-            opacity: 0.2;
-        }
+#waybar {
+    color: @foreground;
+    background-color: @background;
+    padding: 0 4px;
+}
 
-        window#waybar.termite {
-            background-color: #3F3F3F;
-        }
+#workspaces button {
+    color: @foreground;
+    padding: 0.35em;
+    border: 2px solid transparent;
+    color: @foreground-inactive;
+}
 
-        window#waybar.chromium {
-            background-color: #000000;
-            border: none;
-        }
+#workspaces button.active {
+    border-bottom-color: @foreground;
+    color: @foreground;
+}
 
-        button {
-            box-shadow: inset 0 -3px transparent;
-            border: none;
-            border-radius: 0;
-        }
+#memory,
+#temperature {
+    padding-left: 1em
+}
 
-        #workspaces {
-            padding: 4px;
-        }
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#window,
+#custom-shutdown,
+#mpd {
+    border-radius: 6px;
+    padding: 0 6px;
+    margin: 0 4px;
+    color: #fff;
+}
 
-        #workspaces button {
-            background-color: rgb(200, 200, 200);
-            border-radius: 6px;
-            margin-right: 8px;
-        }
-
-        #workspaces button:hover {
-            background: none;
-            border: none;
-            background-color: rgb(180, 180, 180);
-            text-shadow: inherit;
-        }
-
-        #workspaces button.active {
-            background-color: #1971c2;
-            color: #fff;
-        }
-
-        #workspaces button.active:hover {
-            background-color: #145a9b;
-        }
-
-        #workspaces button.urgent {
-            background-color: #eb4d4b;
-        }
-
-        #clock,
-        #battery,
-        #cpu,
-        #memory,
-        #disk,
-        #temperature,
-        #backlight,
-        #network,
-        #pulseaudio,
-        #wireplumber,
-        #custom-media,
-        #tray,
-        #mode,
-        #idle_inhibitor,
-        #scratchpad,
-        #window,
-        #custom-shutdown,
-        #mpd {
-            border-radius: 6px;
-            padding: 0 6px;
-            margin: 4px 4px;
-            color: #fff;
-        }
-
-        #window {
-            color: #000;
-        }
-
-        #window.empty {
-            background-color: inherit;
-        }
-
-        /* If workspaces is the leftmost module, omit left margin */
-        .modules-left > widget:first-child > #workspaces {
-            margin-left: 0;
-        }
-
-        /* If workspaces is the rightmost module, omit right margin */
-        .modules-right > widget:last-child > #workspaces {
-            margin-right: 0;
-        }
-
-        #clock {
-            color: #000;
-            background-color: rgb(200, 200, 200);
-        }
-
-        label:focus {
-            background-color: #000000;
-        }
-
-        #pulseaudio {
-            background-color: #c92a2a;
-        }
-
-
-        #network {
-            background-color: #d9480f;
-            padding: 8px 12px;
-        }
-
-        #tray {
-            background-color: #1971c2;
-        }
-
-        #tray > .passive {
-            -gtk-icon-effect: dim;
-        }
-
-        #tray > .needs-attention {
-            -gtk-icon-effect: highlight;
-            background-color: #eb4d4b;
-        }
-
-        #custom-launcher {
-            margin: 8px 16px;
-            font-size: 18px;
-            color: #1793D1;
-        }
-
-        #custom-media {
-            background-color: rgb(200, 200, 200);
-            color: #000;
-            min-width: 120px;
-        }
-
-        #custom-shutdown {
-            margin-right: 16px;
-            margin-left: 0;
-            color: #000;
-            font-weight: 600;
-            font-size: 16px;
-        }
       '';
   };
 
