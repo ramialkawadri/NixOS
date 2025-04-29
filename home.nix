@@ -51,8 +51,6 @@
     rustfmt
 
     # Neovim lsps and treesitter
-    tree-sitter
-    vimPlugins.nvim-treesitter.withAllGrammars
     bash-language-server
     bibtex-tidy
     clang-tools
@@ -61,6 +59,7 @@
     emmet-ls
     eslint
     gdb
+    hyprls
     jdt-language-server
     ltex-ls
     lua-language-server
@@ -70,23 +69,51 @@
     python312Packages.python-lsp-server
     rust-analyzer
     texlab
+    tree-sitter
     typescript-language-server
     vim-language-server
+    vimPlugins.nvim-treesitter.withAllGrammars
     vscode-langservers-extracted
 
     # Hyprland
-    nwg-look
-    hyprpolkitagent
+    avizo
     clipse
+    hyprpolkitagent
+    nwg-look
+    pavucontrol
+    playerctl
+    swaylock
+    sway-audio-idle-inhibit
+    hyprpaper
   ];
 
   programs.tmux.enable = true;
+
+  programs.kitty = {
+    enable = true;
+    themeFile = "Hybrid";
+    settings = {
+      font_family = "HackNerdFont";
+      font_size = 12;
+    };
+  };
+
+  # TODO: move to own file
+  # TODO: move to black theme
+
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      preload = [ "~/Pictures/background.jpg" ];
+      wallpaper = [ ",~/Pictures/background.jpg" ];
+    };
+  };
 
   services.dunst = {
     enable = true;
     settings = {
         global = {
-            font = "Hack 12";
+            font = "HackNerdFont 12";
             foreground = "#000";
             frame_color = "#1971c2";
             separator_color= "frame";
@@ -99,7 +126,7 @@
             offset = "15x15";
             scale = 0;
             notification_limit = 0;
-            progress_bar = "false";
+            progress_bar = false;
             indicate_hidden = "yes";
             transparency = 0;
             separator_height = 2;
@@ -128,8 +155,8 @@
             history_length = 20;
             always_run_script = true;
             corner_radius = 6;
-            ignore_dbusclose = "false";
-            force_xinerama = "false";
+            ignore_dbusclose = false;
+            force_xinerama = false;
             mouse_left_click = "close_current";
             mouse_middle_click = "do_action, close_current";
             mouse_right_click = "close_all";
@@ -148,18 +175,23 @@
       settings = {
         mainBar = {
           layer = "top";
-          height = 41; 
-          spacing = 0; 
+          height = 40;
           modules-left = ["hyprland/workspaces"];
           modules-center = ["hyprland/window"];
-          modules-right = ["custom/media" "network" "pulseaudio" "tray" "clock" "custom/shutdown"];
-          margin = "0";
+          modules-right = [
+            "custom/media"
+            "network"
+            "pulseaudio"
+            "tray"
+            "clock"
+            "custom/shutdown"
+          ];
 
           network = {
               format = "{ifname}";
               format-wifi = "{essid} ({signalStrength}%) ";
-              format-ethernet = "󰛳 ";
-              format-disconnected = "󰅛 ";
+              format-ethernet = "󰛳";
+              format-disconnected = "󰅛";
               tooltip-format = "{ifname} via {gwaddr} ";
               tooltip-format-wifi = "{essid} ({signalStrength}%) ";
               tooltip-format-ethernet = "{ifname} ";
@@ -169,14 +201,8 @@
 
           "hyprland/workspaces" = {
               on-click = "activate";
-              on-scroll-up = "hyprctl dispatch workspace e+1";
-              on-scroll-down = "hyprctl dispatch workspace e-1";
-              persistent-workspaces = {
-                "1" = [];
-                "2" = [];
-                "3" = [];
-                "4" = [];
-              };
+              on-scroll-up = "hyprctl dispatch workspace e-1";
+              on-scroll-down = "hyprctl dispatch workspace e+1";
           };
 
           tray = {
@@ -189,7 +215,7 @@
           };
 
           pulseaudio = {
-              format = "{volume}% {icon}";
+              format = "{volume}% {icon} ";
               format-bluetooth = "{volume}% {icon} {format_source}";
               format-bluetooth-muted = " {icon} {format_source}";
               format-muted = " {format_source}";
@@ -220,24 +246,23 @@
           };
 
           "custom/shutdown" = {
-              format = "󰜉";
+              format = "";
               on-click = "sleep 0.1 && ~/.config/rofi/powermenu/powermenu.sh";
           };
         };
       };
       style = ''
         * {
-        /* `otf-font-awesome` is required to be installed for icons */
-            font-family: HackNerdFont-Regular;
-            font-size: 14px;
+            font-family: HackNerdFont;
+            font-size: 12px;
         }
 
         window#waybar {
-            background-color: rgba(245, 245, 245, 0.9);
+            background-color: rgba(245, 245, 245, 0.92);
             color: #000;
             transition-property: background-color;
-            transition-duration: .5s;
-            padding: 4px 8px;
+            transition-duration: .1s;
+            padding: 0 2px;
         }
 
         window#waybar.hidden {
@@ -254,9 +279,7 @@
         }
 
         button {
-            /* Use box-shadow instead of border so the text isn't offset */
             box-shadow: inset 0 -3px transparent;
-            /* Avoid rounded borders under each button name */
             border: none;
             border-radius: 0;
         }
@@ -267,7 +290,7 @@
 
         #workspaces button {
             background-color: rgb(200, 200, 200);
-            border-radius: 20px;
+            border-radius: 6px;
             margin-right: 8px;
         }
 
@@ -309,8 +332,8 @@
         #window,
         #custom-shutdown,
         #mpd {
-            border-radius: 20px;
-            padding: 0 12px;
+            border-radius: 6px;
+            padding: 0 6px;
             margin: 4px 4px;
             color: #fff;
         }

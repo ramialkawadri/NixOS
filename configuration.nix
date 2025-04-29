@@ -76,8 +76,13 @@
 
   # Hyprland
   programs.hyprland.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    sugarCandyNix = {
+        enable = true;
+    };
+  };
 
   # Firefox
   programs.firefox = {
@@ -126,6 +131,7 @@
       enable = true;
       plugins = ["tmux" "git" "man" "colored-man-pages" "colorize" "command-not-found"];
     };
+    autosuggestions.highlightStyle = "fg=244";
     promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
   };
   users.defaultUserShell = pkgs.zsh;
