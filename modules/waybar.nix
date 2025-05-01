@@ -89,7 +89,7 @@
 
           "custom/shutdown" = {
             format = "";
-            on-click = "sleep 0.1 && ~/.config/rofi/powermenu/powermenu.sh";
+            on-click = "rofi -show power-menu --no-text -modi power-menu:rofi-power-menu";
           };
         };
       };

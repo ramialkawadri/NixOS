@@ -89,7 +89,7 @@
           ScaleImageCropped = true;
           ScreenWidth = 3840;
           ScreenHeight = 2160;
-          Font = "Hack";
+          Font = "HackNerdFont";
           RoundCorners = 6;
           AccentColor = "#80a1be";
         };

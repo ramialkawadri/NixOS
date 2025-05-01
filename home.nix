@@ -7,6 +7,7 @@
       ./modules/waybar.nix
       ./modules/dark-theme.nix
       ./modules/hyprpaper.nix
+      ./modules/rofi.nix
     ];
 
   home.username = "ramikw";
@@ -44,7 +45,7 @@
     anki
     discord
     drawio
-    krita
+    gimp
     libreoffice
     megasync
     shotcut
@@ -103,14 +104,15 @@
 
     # Hyprland
     avizo
-    clipse
+    cliphist
+    hyprpaper
     hyprpolkitagent
     nwg-look
     pavucontrol
     playerctl
-    swaylock
+    rofi-power-menu
     sway-audio-idle-inhibit
-    hyprpaper
+    swaylock
   ];
 
   programs.tmux.enable = true;
