@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       general = {
-        grace = 5;
+        grace = 2;
         hide_cursor = false;
       };
 

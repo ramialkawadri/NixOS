@@ -42,7 +42,7 @@
   users.users.ramikw = {
     isNormalUser = true;
     description = "ramikw";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "input" ];
     packages = [];
   };
 

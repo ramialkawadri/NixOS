@@ -9,7 +9,7 @@
           modules-left = ["hyprland/workspaces"];
           modules-center = ["hyprland/window"];
           modules-right = [
-            "custom/media"
+            "keyboard-state"
             "network"
             "pulseaudio"
             "tray"
@@ -27,6 +27,19 @@
             tooltip-format-ethernet = "{ifname} ";
             tooltip-format-disconnected = "Disconnected";
             max-length = 50;
+          };
+
+          keyboard-state = {
+            capslock = true;
+            format = {
+              capslock = "{icon}";
+            };
+            format-icons = {
+              locked = "󰪛";
+              # Hidden
+              unlocked = "";
+            };
+            binding-keys = [ 58 66 69 70 ];
           };
 
           "hyprland/workspaces" = {
@@ -73,18 +86,6 @@
               default = ["" "" ""];
             };
             on-click = "pavucontrol";
-          };
-
-          "custom/media" = {
-            format = "{icon}  {}";
-            escape = true;
-            return-type = "json";
-            max-length = 10;
-            on-click = "playerctl play-pause";
-            smooth-scrolling-threshold = 10;
-            on-scroll-up = "playerctl next";
-            on-scroll-down = "playerctl previous";
-            exec = "$HOME/.config/waybar/mediaplayer.py 2> /dev/null";
           };
 
           "custom/shutdown" = {
@@ -140,18 +141,26 @@
 #network,
 #pulseaudio,
 #wireplumber,
-#custom-media,
 #tray,
 #mode,
 #idle_inhibitor,
 #scratchpad,
 #window,
 #custom-shutdown,
-#mpd {
+#mpd,
+#keyboard-state {
     border-radius: 6px;
     padding: 0 6px;
     margin: 0 4px;
     color: #fff;
+}
+
+#keyboard-state label {
+    color: transparent;
+}
+
+#keyboard-state label.locked {
+    color: @foreground;
 }
       '';
   };
