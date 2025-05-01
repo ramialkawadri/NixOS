@@ -9,6 +9,7 @@
       ./modules/hyprlock.nix
       ./modules/hyprpaper.nix
       ./modules/rofi.nix
+      ./modules/tmux.nix
       ./modules/waybar.nix
     ];
 
@@ -38,6 +39,15 @@
     x11 = {
       enable = true;
       defaultCursor = "Bibata-Modern-Classic";
+    };
+  };
+
+  programs.kitty = {
+    enable = true;
+    themeFile = "Hybrid";
+    settings = {
+      font_family = "HackNerdFont";
+      font_size = 12;
     };
   };
 
@@ -120,18 +130,6 @@
     grim
     slurp
   ];
-
-  programs.tmux.enable = true;
-
-  programs.kitty = {
-    enable = true;
-    themeFile = "Hybrid";
-    settings = {
-      font_family = "HackNerdFont";
-      font_size = 12;
-    };
-  };
-
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
