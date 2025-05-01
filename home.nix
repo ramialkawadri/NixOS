@@ -124,7 +124,6 @@
     nwg-look
     pavucontrol
     playerctl
-    rofi-power-menu
 
     # Screenshot
     grim

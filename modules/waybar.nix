@@ -1,5 +1,11 @@
 { ... }:
 {
+  home.file."rofi" = {
+    source = ../dotfiles/rofi;
+    recursive = true;
+    force = true;
+  };
+
   programs.waybar = {
       enable = true;
       settings = {
@@ -90,7 +96,7 @@
 
           "custom/shutdown" = {
             format = "";
-            on-click = ''rofi -show power-menu --no-text -modi "power-menu:rofi-power-menu --choices=logout/suspend/hibernate/shutdown/reboot"'';
+            on-click = "rofi -show power-menu -modi power-menu:~/rofi/rofi-power-menu";
             tooltip = false;
           };
         };
