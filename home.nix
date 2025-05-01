@@ -30,15 +30,15 @@
   };
 
   home.pointerCursor = {
-    name = "Adwaita-icon-theme";
-    package = pkgs.adwaita-icon-theme;
+    name = "Adwaita";
+    package = pkgs.gnome-themes-extra;
 
     size = 22;
     gtk.enable = true;
 
     x11 = {
       enable = true;
-      defaultCursor = "Adwaita-icon-theme";
+      defaultCursor = "Adwaita";
     };
   };
 

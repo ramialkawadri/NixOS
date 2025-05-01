@@ -14,7 +14,7 @@
     histSize = 10000;
     ohMyZsh = {
       enable = true;
-      plugins = ["tmux" "git" "man" "colored-man-pages" "colorize" "command-not-found"];
+      plugins = [ "tmux" "git" "man" "colored-man-pages" "colorize" "command-not-found" ];
     };
     autosuggestions.highlightStyle = "fg=244";
     promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";

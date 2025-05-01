@@ -82,17 +82,17 @@
     enable = true;
     wayland.enable = true;
     sugarCandyNix = {
-        enable = true;
-        settings = {
-          Background = lib.cleanSource ./imgs/background.jpg;
-          DimBackgroundImage = 0.4;
-          ScaleImageCropped = true;
-          ScreenWidth = 3840;
-          ScreenHeight = 2160;
-          Font = "HackNerdFont";
-          RoundCorners = 6;
-          AccentColor = "#80a1be";
-        };
+      enable = true;
+      settings = {
+        Background = lib.cleanSource ./imgs/background.jpg;
+        DimBackgroundImage = 0.4;
+        ScaleImageCropped = true;
+        ScreenWidth = 3840;
+        ScreenHeight = 2160;
+        Font = "HackNerdFont";
+        RoundCorners = 6;
+        AccentColor = "#80a1be";
+      };
     };
   };
 
@@ -116,7 +116,6 @@
     QT_SCALE_FACTOR = 1;
     GTK_USE_PORTAL = 1;
     NIXOS_OZONE_WL = 1;
-    ADW_DISABLE_PORTAL = 1;
   };
 
   # Printing
@@ -128,7 +127,7 @@
   };
 
   # Nvidia-driver
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = true;
@@ -162,8 +161,8 @@
   # This and the kernal param "acpi_osi=\"!Windows 2015\"" fixes sleep issues for Gigabyte.
   # https://wiki.archlinux.org/title/Power_management/Wakeup_triggers#Gigabyte_motherboards
   services.udev.extraRules = ''
-      ACTION=="add", SUBSYSTEM=="pci", DRIVER=="pcieport", ATTR{power/wakeup}="disabled"
-      ACTION=="add" SUBSYSTEM=="pci" ATTR{vendor}=="0x1022" ATTR{device}=="0x1483" ATTR{power/wakeup}="disabled"
+    ACTION=="add", SUBSYSTEM=="pci", DRIVER=="pcieport", ATTR{power/wakeup}="disabled"
+    ACTION=="add" SUBSYSTEM=="pci" ATTR{vendor}=="0x1022" ATTR{device}=="0x1483" ATTR{power/wakeup}="disabled"
   '';
 
   services.solaar = {
