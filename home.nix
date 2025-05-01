@@ -74,6 +74,7 @@
     gnome-text-editor
     loupe
     nautilus
+    papers
     simple-scan
 
     cargo
