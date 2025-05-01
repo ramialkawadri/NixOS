@@ -3,11 +3,13 @@
 {
   imports = 
     [
-      ./modules/dunst.nix
-      ./modules/waybar.nix
       ./modules/dark-theme.nix
+      ./modules/dunst.nix
+      ./modules/hypridle.nix
+      ./modules/hyprlock.nix
       ./modules/hyprpaper.nix
       ./modules/rofi.nix
+      ./modules/waybar.nix
     ];
 
   home.username = "ramikw";
@@ -105,14 +107,18 @@
     # Hyprland
     avizo
     cliphist
+    hypridle
     hyprpaper
+    hyprpicker
     hyprpolkitagent
     nwg-look
     pavucontrol
     playerctl
     rofi-power-menu
-    sway-audio-idle-inhibit
-    swaylock
+
+    # Screenshot
+    grim
+    slurp
   ];
 
   programs.tmux.enable = true;

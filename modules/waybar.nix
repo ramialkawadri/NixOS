@@ -89,7 +89,8 @@
 
           "custom/shutdown" = {
             format = "";
-            on-click = "rofi -show power-menu --no-text -modi power-menu:rofi-power-menu";
+            on-click = ''rofi -show power-menu --no-text -modi "power-menu:rofi-power-menu --choices=logout/suspend/hibernate/shutdown/reboot"'';
+            tooltip = false;
           };
         };
       };
