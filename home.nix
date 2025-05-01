@@ -29,16 +29,15 @@
   };
 
   home.pointerCursor = {
-    name = "bibata-cursors";
-    package = pkgs.bibata-cursors;
+    name = "Adwaita";
+    package = pkgs.gnome-themes-extra;
 
     size = 22;
-
     gtk.enable = true;
 
     x11 = {
       enable = true;
-      defaultCursor = "Bibata-Modern-Classic";
+      defaultCursor = "Adwaita";
     };
   };
 
