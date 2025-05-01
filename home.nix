@@ -6,6 +6,7 @@
       ./modules/dark-theme.nix
       ./modules/dunst.nix
       ./modules/hypridle.nix
+      ./modules/hyprland.nix
       ./modules/hyprlock.nix
       ./modules/hyprpaper.nix
       ./modules/rofi.nix
