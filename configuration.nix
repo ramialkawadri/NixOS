@@ -116,6 +116,7 @@
     QT_SCALE_FACTOR = 1;
     GTK_USE_PORTAL = 1;
     NIXOS_OZONE_WL = 1;
+    ADW_DISABLE_PORTAL = 1;
   };
 
   # Printing

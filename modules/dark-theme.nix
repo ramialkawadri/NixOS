@@ -2,6 +2,7 @@
 {
   dconf.settings = {
     "org/gnome/desktop/interface" = {
+      gtk-theme = "Adwaita-dark";
       color-scheme = "prefer-dark";
     };
   };
@@ -16,7 +17,8 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "adwaita";
-    style.name = "adwaita-dark";
+    platformTheme.name = "Adwaita-dark";
+    style.name = "Adwaita-dark";
+    style.package = pkgs.adwaita-qt;
   };
 }

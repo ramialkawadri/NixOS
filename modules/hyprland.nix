@@ -183,10 +183,10 @@
       "$mainMod, C, killactive,"
       "$mainMod, M, exit,"
       "$mainMod, E, exec, nautilus"
-      "$mainMod, L, exec, rofi -show power-menu -modi power-menu:~/rofi/rofi-power-menu"
+      "$mainMod, L, exec, hyprlock"
       "$mainMod, F, togglefloating,"
       "$mainMod, SPACE, exec, rofi -show drun"
-      ''ALT, F4, exec, rofi -p "" -show power-menu --no-text -modi power-menu:rofi-power-menu -display-power-menu''
+      "ALT, F4, exec, rofi -show power-menu --no-text -modi power-menu:${../dotfiles/rofi/rofi-power-menu}"
       "$mainMod, code:60, exec, rofi -modi emoji -show emoji -emoji-mode insert_no_copy"
       '', Print, exec, grim -g "$(slurp -d)" - | wl-copy''
       "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"

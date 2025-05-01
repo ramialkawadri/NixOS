@@ -10,7 +10,7 @@
 
       background = [
         {
-          path = "~/Pictures/NixOS/background.jpg";
+          path = "${../imgs/background.jpg}";
           blur_passes = 2;
           blur_size = 4;
         }

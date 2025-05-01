@@ -1,11 +1,5 @@
 { ... }:
 {
-  home.file."rofi" = {
-    source = ../dotfiles/rofi;
-    recursive = true;
-    force = true;
-  };
-
   programs.waybar = {
       enable = true;
       settings = {
@@ -96,11 +90,12 @@
 
           "custom/shutdown" = {
             format = "";
-            on-click = "rofi -show power-menu -modi power-menu:~/rofi/rofi-power-menu";
+            on-click = "rofi -show power-menu -modi power-menu:${../dotfiles/rofi/rofi-power-menu}";
             tooltip = false;
           };
         };
       };
+
       # Copied from: https://github.com/mechakotik/dots/tree/main/.config/waybar
       style = ''
 @define-color foreground #eeeeee;
