@@ -1,6 +1,11 @@
 { ... }:
 {
-  wayland.windowManager.hyprland.enable = true;
+  wayland.windowManager.hyprland = {
+    enable = true;
+    package = null;
+    portalPackage = null;
+    systemd.variables = [ "--all" ];
+  };
   wayland.windowManager.hyprland.settings = {
 
     env = [
@@ -23,18 +28,16 @@
     #################
 
     exec-once = [
-      "hyprpaper"
-      "dunst"
+      "waybar & hyprpaper & dunst & hypridle"
       "systemctl --user start hyprpolkitagent"
       "wl-paste --type text --watch cliphist store"
       "wl-paste --type image --watch cliphist store"
-      "waybar"
-      "1password --silent"
-      "megasync"
-      "solaar -w hide"
+      # Adding some sleep time to way for waybar to start
+      "sleep 5 && 1password --silent"
+      "sleep 5 && megasync"
+      "sleep 5 && solaar -w hide"
       "avizo-service"
       ''hyprctl setcursor "Adwaita" 24''
-      "hypridle"
     ];
 
     #####################

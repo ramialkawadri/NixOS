@@ -109,7 +109,6 @@
   services.cron.enable = true;
   hardware.bluetooth.enable = true;
   hardware.logitech.wireless.enable = true;
-  xdg.portal.enable = true;
 
   # Environment variables
   environment.sessionVariables = {
