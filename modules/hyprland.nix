@@ -217,10 +217,6 @@
       "$mainMod, 9, workspace, 9"
       "$mainMod, 0, workspace, 10"
 
-      # Switch to next/previous workspace shortcut
-      "$mainMod, page_down, workspace, e+1"
-      "$mainMod, page_up, workspace, e-1"
-
       # Move active window to a workspace with mainMod + SHIFT + [0-9]
       "$mainMod SHIFT, 1, movetoworkspace, 1"
       "$mainMod SHIFT, 2, movetoworkspace, 2"
@@ -232,10 +228,6 @@
       "$mainMod SHIFT, 8, movetoworkspace, 8"
       "$mainMod SHIFT, 9, movetoworkspace, 9"
       "$mainMod SHIFT, 0, movetoworkspace, 10"
-
-      # Move active window to prev/next workspace"
-      "$mainMod SHIFT, page_down, movetoworkspace, e+1"
-      "$mainMod SHIFT, page_up, movetoworkspace, e-1"
 
       # Swapping within the master layout"
       "$mainMod CTRL, right, layoutmsg, swapnext"
@@ -262,6 +254,14 @@
       "$mainMod, mouse:273, resizewindow"
     ];
 
+    binde = [
+      # Resize bindings
+      "$mainMod ALT, right, resizeactive, 10 0"
+      "$mainMod ALT, left, resizeactive, -10 0"
+      "$mainMod ALT, up, resizeactive, 0 -10"
+      "$mainMod ALT, down, resizeactive, 0 10"
+    ];
+
     bindel = [
       # Laptop multimedia keys for volume and LCD brightness
       ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
@@ -274,14 +274,6 @@
       ", XF86AudioPause, exec, playerctl play-pause"
       ", XF86AudioPlay, exec, playerctl play-pause"
       ", XF86AudioPrev, exec, playerctl previous"
-    ];
-
-    binde = [
-      # Resize bindings
-      "$mainMod ALT, right, resizeactive, 10 0"
-      "$mainMod ALT, left, resizeactive, -10 0"
-      "$mainMod ALT, up, resizeactive, 0 -10"
-      "$mainMod ALT, down, resizeactive, 0 10"
     ];
   };
 }
