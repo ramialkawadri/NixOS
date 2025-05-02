@@ -50,10 +50,10 @@
     #####################
 
     general = {
-      gaps_in = 2;
-      gaps_out = 4;
+      gaps_in = 0;
+      gaps_out = 0;
 
-      border_size = 2;
+      border_size = 3;
       resize_on_border = true;
 
       "col.active_border" = "rgb(58a4e9)";
@@ -64,8 +64,8 @@
     };
 
     decoration = {
-      rounding = 2;
-      rounding_power = 4;
+      rounding = 0;
+      rounding_power = 0;
       inactive_opacity = 0.95;
 
       shadow = {
