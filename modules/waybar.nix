@@ -57,12 +57,12 @@
             calendar = {
               mode = "year";
               mode-mon-col = 3;
-              weeks-pos = "right";
+              weeks-pos = "left";
               on-scroll = 1;
               format = {
                 months = "<span color='#fff'><b>{}</b></span>";
                 days = "<span color='#fff'><b>{}</b></span>";
-                weeks = "<span color='#99ffdd'><b>W{}</b></span>";
+                weeks = "<span color='#58a4e9'><b>{:%V}</b></span>";
                 weekdays = "<span color='#ffcc66'><b>{}</b></span>";
                 today = "<span color='#ff6699'><b><u>{}</u></b></span>";
               };
