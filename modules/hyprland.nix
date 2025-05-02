@@ -6,11 +6,12 @@
     portalPackage = null;
     systemd.variables = [ "--all" ];
   };
+
   wayland.windowManager.hyprland.settings = {
 
     env = [
-      "XCURSOR_SIZE,22"
-      "HYPRCURSOR_SIZE,22"
+      "XCURSOR_SIZE,24"
+      "HYPRCURSOR_SIZE,24"
       "HYPRCURSOR_THEME,Adwaita"
 
       # Nvidia
@@ -37,7 +38,11 @@
       "sleep 5 && megasync"
       "sleep 5 && solaar -w hide"
       "avizo-service"
-      ''hyprctl setcursor "Adwaita" 22''
+      ''hyprctl setcursor "Adwaita" 24''
+
+      "[workspace 1 silent] firefox"
+      "[workspace 3 silent] sleep 6; anki"
+      "[workspace 3 silent] gnome-clocks"
     ];
 
     #####################
@@ -269,6 +274,14 @@
       ", XF86AudioPause, exec, playerctl play-pause"
       ", XF86AudioPlay, exec, playerctl play-pause"
       ", XF86AudioPrev, exec, playerctl previous"
+    ];
+
+    binde = [
+      # Resize bindings
+      "$mainMod ALT, right, resizeactive, 10 0"
+      "$mainMod ALT, left, resizeactive, -10 0"
+      "$mainMod ALT, up, resizeactive, 0 -10"
+      "$mainMod ALT, down, resizeactive, 0 10"
     ];
   };
 }
