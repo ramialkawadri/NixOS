@@ -45,7 +45,7 @@ set-option -g renumber-windows on
 
 # Keep title in sync with window title
 set-option -g set-titles on
-set-option -g set-titles-string "#W"
+set-option -g set-titles-string "tmux - #{pane_title}"
 
 # Remap copying keys
 bind Escape copy-mode
