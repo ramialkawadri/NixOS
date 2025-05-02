@@ -9,8 +9,8 @@
   wayland.windowManager.hyprland.settings = {
 
     env = [
-      "XCURSOR_SIZE,24"
-      "HYPRCURSOR_SIZE,24"
+      "XCURSOR_SIZE,22"
+      "HYPRCURSOR_SIZE,22"
       "HYPRCURSOR_THEME,Adwaita"
 
       # Nvidia
@@ -37,7 +37,7 @@
       "sleep 5 && megasync"
       "sleep 5 && solaar -w hide"
       "avizo-service"
-      ''hyprctl setcursor "Adwaita" 24''
+      ''hyprctl setcursor "Adwaita" 22''
     ];
 
     #####################
@@ -151,7 +151,7 @@
       "stayfocused, class:(clipse)"
 
       # Kitty
-      "opacity 0.88 override, class:^(kitty)$"
+      "opacity 0.92 override, class:^(kitty)$"
 
       # MEGAsync
       "float, title:(MEGAsync)"

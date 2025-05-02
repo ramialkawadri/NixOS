@@ -43,6 +43,10 @@ set -g visual-activity on
 # Renumber on closing a window
 set-option -g renumber-windows on
 
+# Keep title in sync with window title
+set-option -g set-titles on
+set-option -g set-titles-string "#W"
+
 # Remap copying keys
 bind Escape copy-mode
 bind-key -T copy-mode-vi v send -X begin-selection
