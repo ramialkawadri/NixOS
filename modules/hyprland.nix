@@ -199,7 +199,7 @@
       "$mainMod, F, togglefloating,"
       "$mainMod, SPACE, exec, rofi -show drun"
       "ALT, F4, exec, rofi -show power-menu --no-text -modi power-menu:${../dotfiles/rofi/rofi-power-menu}"
-      "$mainMod, code:60, exec, rofi -modi emoji -show emoji -emoji-mode insert_no_copy"
+      "$mainMod, code:60, exec, rofi -modi emoji -show emoji -emoji-mode insert_no_copy -emoji-format '{emoji}' -theme-str \"listview { columns: 5; }\"" 
       '', Print, exec, grim -g "$(slurp -d)" - | wl-copy''
       "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 

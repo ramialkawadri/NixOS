@@ -13,6 +13,7 @@
       filter = "";
       show-icons = true;
       display-drun = "";
+      hover-select = true;
     };
   };
 }
