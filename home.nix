@@ -117,7 +117,7 @@
 
     # Hyprland
     avizo
-    cliphist
+    clipse
     hypridle
     hyprpaper
     hyprpicker

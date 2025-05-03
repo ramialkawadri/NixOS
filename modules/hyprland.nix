@@ -31,8 +31,7 @@
     exec-once = [
       "waybar & hyprpaper & dunst & hypridle"
       "systemctl --user start hyprpolkitagent"
-      "wl-paste --type text --watch cliphist store"
-      "wl-paste --type image --watch cliphist store"
+      "clipse -listen"
       # Adding some sleep time to way for waybar to start
       "sleep 5 && 1password --silent"
       "sleep 5 && megasync"
@@ -201,7 +200,7 @@
       "ALT, F4, exec, rofi -show power-menu --no-text -modi power-menu:${../dotfiles/rofi/rofi-power-menu}"
       "$mainMod, code:60, exec, rofi -modi emoji -show emoji -emoji-mode insert_no_copy -emoji-format '{emoji}' -theme-str \"listview { columns: 5; }\"" 
       '', Print, exec, grim -g "$(slurp -d)" - | wl-copy''
-      "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+      "SUPER, V, exec, kitty --class clipse -e clipse"
 
       # Move focus with mainMod + arrow keys
       "$mainMod, left, movefocus, l"
