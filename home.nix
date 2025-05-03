@@ -10,6 +10,7 @@
       ./modules/hyprland.nix
       ./modules/hyprlock.nix
       ./modules/hyprpaper.nix
+      ./modules/lazygit.nix
       ./modules/rofi.nix
       ./modules/tmux.nix
       ./modules/waybar.nix
@@ -26,6 +27,12 @@
 
   home.file."Pictures/NixOS" = {
     source = ./imgs;
+    recursive = true;
+    force = true;
+  };
+
+  home.file.".vsnip" = {
+    source = ./dotfiles/vsnip;
     recursive = true;
     force = true;
   };
@@ -84,7 +91,6 @@
     dotnet-sdk
     gcc
     jdk
-    lazygit
     nodejs
     postman
     python314
