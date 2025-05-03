@@ -3,6 +3,7 @@
 {
   imports = 
     [
+      ./modules/clipse.nix
       ./modules/dark-theme.nix
       ./modules/dunst.nix
       ./modules/hypridle.nix
@@ -117,7 +118,6 @@
 
     # Hyprland
     avizo
-    clipse
     hypridle
     hyprpaper
     hyprpicker

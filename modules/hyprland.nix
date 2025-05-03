@@ -31,7 +31,6 @@
     exec-once = [
       "waybar & hyprpaper & dunst & hypridle"
       "systemctl --user start hyprpolkitagent"
-      "clipse -listen"
       # Adding some sleep time to way for waybar to start
       "sleep 5 && 1password --silent"
       "sleep 5 && megasync"
