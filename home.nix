@@ -81,6 +81,7 @@
     gnome-logs
     gnome-text-editor
     loupe
+    mission-center
     nautilus
     papers
     simple-scan
