@@ -55,7 +55,7 @@
     themeFile = "Hybrid";
     settings = {
       font_family = "HackNerdFont";
-      font_size = 12;
+      font_size = 13;
     };
   };
 
