@@ -160,6 +160,7 @@
       "float, class:(clipse)"
       "size 622 652, class:(clipse)"
       "stayfocused, class:(clipse)"
+      "opacity 0.94 override, class:^(clipse)$"
 
       # Kitty
       "opacity 0.90 override, class:^(kitty)$"
