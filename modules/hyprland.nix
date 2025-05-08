@@ -64,7 +64,11 @@
     decoration = {
       rounding = 0;
       rounding_power = 0;
-      inactive_opacity = 0.96;
+      inactive_opacity = 0.94;
+
+      blur = {
+        passes = 2;
+      };
 
       shadow = {
         enabled = true;
@@ -158,7 +162,7 @@
       "stayfocused, class:(clipse)"
 
       # Kitty
-      "opacity 0.94 override, class:^(kitty)$"
+      "opacity 0.90 override, class:^(kitty)$"
 
       # MEGAsync
       "float, title:(MEGAsync)"
