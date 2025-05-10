@@ -122,8 +122,9 @@
     #############
 
     input = {
-      kb_layout = "no,sy";
       follow_mouse = 2;
+      float_switch_override_focus = 0;
+      kb_layout = "no,sy";
       kb_options = "grp:alt_shift_toggle";
     };
 
