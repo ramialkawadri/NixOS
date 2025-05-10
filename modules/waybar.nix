@@ -4,7 +4,8 @@
       enable = true;
       settings = {
         mainBar = {
-          layer = "top";
+          layer = "bottom";
+          position = "bottom";
           height = 40;
           modules-left = ["hyprland/workspaces"];
           modules-center = ["hyprland/window"];
@@ -100,7 +101,6 @@
       style = ''
 @define-color foreground #eeeeee;
 @define-color foreground-inactive #aaaaaa;
-@define-color background #000000;
 
 * {
     font-family: HackNerdFont;
@@ -111,14 +111,14 @@
 
 #waybar {
     color: @foreground;
-    background-color: @background;
+    background-color: rgb(0, 0, 0);
     padding: 0 4px;
 }
 
 #workspaces button {
     color: @foreground;
     padding: 0.35em;
-    border: 2px solid transparent;
+    border: 3px solid transparent;
     color: @foreground-inactive;
 }
 
@@ -151,7 +151,7 @@
 #mpd,
 #keyboard-state {
     border-radius: 6px;
-    padding: 0 6px;
+    padding: 3px 6px;
     margin: 0 4px;
     color: #fff;
 }
