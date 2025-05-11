@@ -65,9 +65,10 @@
     anki
     discord
     drawio
-    gimp
+    gimp3
     libreoffice
     megasync
+    mpv
     shotcut
     thunderbird
     vlc

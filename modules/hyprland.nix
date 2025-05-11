@@ -64,7 +64,6 @@
     decoration = {
       rounding = 0;
       rounding_power = 0;
-      inactive_opacity = 0.94;
 
       blur = {
         passes = 2;
