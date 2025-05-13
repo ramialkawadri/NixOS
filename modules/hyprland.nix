@@ -163,7 +163,7 @@
       "opacity 0.90 override, class:^(clipse)$"
 
       # Kitty
-      "opacity 0.90 override, class:^(kitty)$"
+      "opacity 0.94 override, class:^(kitty)$"
 
       # MEGAsync
       "float, title:(MEGAsync)"
