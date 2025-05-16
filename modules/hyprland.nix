@@ -48,8 +48,8 @@
     #####################
 
     general = {
-      gaps_in = 0;
-      gaps_out = 0;
+      gaps_in = 2;
+      gaps_out = 2;
 
       border_size = 3;
       resize_on_border = true;
@@ -161,9 +161,6 @@
       "size 622 652, class:(clipse)"
       "stayfocused, class:(clipse)"
       "opacity 0.90 override, class:^(clipse)$"
-
-      # Kitty
-      "opacity 0.96 override, class:^(kitty)$"
 
       # MEGAsync
       "float, title:(MEGAsync)"
