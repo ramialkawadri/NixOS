@@ -62,11 +62,15 @@
   home.packages = with pkgs; [
     tmuxinator
 
+    hunspell
+    hunspellDicts.nb_NO
+    hunspellDicts.en_US
+    libreoffice
+
     anki
     discord
     drawio
     gimp3
-    libreoffice
     megasync
     mpv
     shotcut
