@@ -34,13 +34,12 @@
       # Adding some sleep time to way for waybar to start
       "sleep 5 && 1password --silent"
       "sleep 5 && megasync"
-      "sleep 5 && solaar -w hide"
       "avizo-service"
       ''hyprctl setcursor "Adwaita" 24''
 
       "[workspace 1 silent] firefox"
-      "[workspace 3 silent] sleep 6; anki"
-      "[workspace 3 silent] gnome-clocks"
+      "[workspace 4 silent] sleep 6; anki"
+      "[workspace 4 silent] gnome-clocks"
     ];
 
     #####################
