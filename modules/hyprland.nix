@@ -21,7 +21,7 @@
     ];
 
     monitor = [
-      ", highres, auto, 1.33333, bitdepth, 10"
+      ", highres, auto, 1, bitdepth, 10"
     ];
 
     #################
@@ -124,6 +124,10 @@
       float_switch_override_focus = 0;
       kb_layout = "no,sy";
       kb_options = "grp:alt_shift_toggle";
+
+      touchpad = {
+        natural_scroll = true;
+      };
     };
 
     gestures = {

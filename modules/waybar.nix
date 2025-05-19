@@ -12,6 +12,7 @@
           modules-right = [
             "keyboard-state"
             "network"
+            "battery"
             "pulseaudio"
             "tray"
             "clock"
@@ -20,7 +21,7 @@
 
           network = {
             format = "{ifname}";
-            format-wifi = "{essid} ({signalStrength}%) ";
+            format-wifi = "{signalStrength}% ";
             format-ethernet = "󰛳";
             format-disconnected = "󰅛";
             tooltip-format = "{ifname} via {gwaddr} ";
@@ -28,6 +29,13 @@
             tooltip-format-ethernet = "{ifname} ";
             tooltip-format-disconnected = "Disconnected";
             max-length = 50;
+          };
+
+          battery = {
+            format = "{capacity}% {icon}";
+            format-charging = "{capacity}% ";
+            format-plugged = "{capacity}% ";
+            format-icons = [ "" "" "" "" "" ];
           };
 
           keyboard-state = {
