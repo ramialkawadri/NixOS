@@ -18,6 +18,10 @@
 
   home.username = "ramikw";
   home.homeDirectory = "/home/ramikw";
+  xdg = {
+    enable = true;
+    userDirs.enable = true;
+  };
 
   home.file.".config/vlc" = {
     source = ./dotfiles/vlc;
