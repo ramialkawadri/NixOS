@@ -9,14 +9,18 @@
     ];
 
   # Bootloader
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub = {
-    enable = true;
-    device = "nodev";
-    useOSProber = true;
-    efiSupport = true;
+  boot = {
+    loader.efi.canTouchEfiVariables = true;
+    loader.timeout = 0;
+    loader.grub = {
+      enable = true;
+      device = "nodev";
+      useOSProber = true;
+      efiSupport = true;
+      timeoutStyle = "hidden";
+    };
+    plymouth.enable = true;
   };
-  boot.plymouth.enable = true;
 
   # Kernel
   boot.kernel.sysctl = { "vm.swappiness" = 4; };
@@ -87,8 +91,8 @@
         Background = lib.cleanSource ./imgs/background.jpg;
         DimBackgroundImage = 0.4;
         ScaleImageCropped = true;
-        ScreenWidth = 3840;
-        ScreenHeight = 2160;
+        ScreenWidth = 2560;
+        ScreenHeight = 1440;
         Font = "HackNerdFont";
         RoundCorners = 6;
         AccentColor = "#80a1be";
