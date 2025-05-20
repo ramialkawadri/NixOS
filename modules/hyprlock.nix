@@ -35,6 +35,7 @@
           outer_color = "#000000";
           placeholder_text = ''<span foreground="##000">Password...</span>'';
           shadow_passes = 4;
+          fade_on_empty = false;
         }
       ];
     };
