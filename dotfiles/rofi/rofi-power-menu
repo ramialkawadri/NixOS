@@ -40,8 +40,8 @@ icons[cancel]="\Uf0156"
 declare -A actions
 actions[lockscreen]="hyprlock"
 actions[logout]="hyprctl dispatch exit"
-actions[suspend]="hyprlock & disown; systemctl suspend"
-actions[hibernate]="hyprlock & disown; systemctl hibernate"
+actions[suspend]="systemctl suspend"
+actions[hibernate]="systemctl hibernate"
 actions[reboot]="systemctl reboot"
 actions[shutdown]="systemctl poweroff"
 
