@@ -275,6 +275,8 @@
       # Laptop multimedia keys for volume and LCD brightness
       ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
       ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+      # Lock on laptop lid close
+      ",switch:Lid Switch, exec, hyprlock"
     ];
 
     bindl = [
