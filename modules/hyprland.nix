@@ -21,7 +21,7 @@
     ];
 
     monitor = [
-      ", highres, auto, 1, bitdepth, 10"
+      ", highres, auto, 1.333333, bitdepth, 10"
     ];
 
     #################

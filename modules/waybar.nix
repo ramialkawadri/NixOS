@@ -112,7 +112,7 @@
 
 * {
     font-family: HackNerdFont;
-    font-size: 14px;
+    font-size: 15px;
     padding: 0;
     margin: 0;
 }
