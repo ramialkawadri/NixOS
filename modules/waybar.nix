@@ -15,6 +15,7 @@
             "battery"
             "pulseaudio"
             "tray"
+            "hyprland/language"
             "clock"
             "custom/shutdown"
           ];
@@ -55,6 +56,10 @@
             on-click = "activate";
             on-scroll-up = "hyprctl dispatch workspace e-1";
             on-scroll-down = "hyprctl dispatch workspace e+1";
+          };
+
+          "hyprland/language" = {
+            format = "{shortDescription}";
           };
 
           tray.spacing = 12;
@@ -100,7 +105,7 @@
           "custom/shutdown" = {
             format = "";
             on-click = "rofi -show power-menu -modi power-menu:${../dotfiles/rofi/rofi-power-menu}";
-            tooltip = false;
+            tooltip-format = "Power options";
           };
         };
       };
