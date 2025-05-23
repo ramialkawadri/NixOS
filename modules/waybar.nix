@@ -169,6 +169,10 @@
     color: #fff;
 }
 
+#window {
+    font-weight: bold;
+}
+
 #keyboard-state label {
     color: transparent;
 }
