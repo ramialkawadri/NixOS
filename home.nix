@@ -14,6 +14,7 @@
       ./modules/rofi.nix
       ./modules/tmux.nix
       ./modules/waybar.nix
+      ./modules/zsh.nix
     ];
 
   home.username = "ramikw";

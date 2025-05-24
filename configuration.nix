@@ -4,7 +4,6 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./modules/zsh.nix
       ./modules/git.nix
     ];
 
@@ -47,6 +46,8 @@
     extraGroups = [ "networkmanager" "wheel" "input" ];
     packages = [];
   };
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
 
   # Packages
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
