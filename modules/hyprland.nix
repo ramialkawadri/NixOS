@@ -122,8 +122,9 @@
     input = {
       follow_mouse = 2;
       float_switch_override_focus = 0;
-      kb_layout = "us-intl,no,sy";
+      kb_layout = "us,no,sy";
       kb_options = "grp:alt_shift_toggle";
+      kb_variant = "altgr-intl,";
 
       touchpad = {
         natural_scroll = true;
