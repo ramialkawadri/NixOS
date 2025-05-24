@@ -12,13 +12,14 @@
 
         listener = [
         {
-          timeout = 600;
-          on-timeout = "hyprlock";
-        }
-        {
-          timeout = 1200;
+          # Turn off the monitors after 120 seconds.
+          timeout = 120;
           on-timeout = "hyprctl dispatch dpms off";
           on-resume = "hyprctl dispatch dpms on";
+        }
+        {
+          timeout = 600;
+          on-timeout = "hyprlock";
         }
       ];
     };
