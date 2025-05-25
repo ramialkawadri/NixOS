@@ -17,6 +17,7 @@
             "tray"
             "hyprland/language"
             "clock"
+            "custom/notification"
             "custom/shutdown"
           ];
 
@@ -81,6 +82,27 @@
                 today = "<span color='#ff6699'><b><u>{}</u></b></span>";
               };
             };
+          };
+
+          "custom/notification" = {
+            tooltip = false;
+            format = "{icon}";
+            format-icons = {
+              notification = "";
+              none = "";
+              dnd-notification = "󰂛";
+              dnd-none = "󰪑";
+              inhibited-notification = "";
+              inhibited-none = "";
+              dnd-inhibited-notification = "󰂛";
+              dnd-inhibited-none = "󰪑";
+            };
+            return-type = "json";
+            exec-if = "which swaync-client";
+            exec = "swaync-client -swb";
+            on-click = "swaync-client -t -sw";
+            on-click-right = "swaync-client -d -sw";
+            escape = true;
           };
 
           pulseaudio = {
@@ -162,8 +184,8 @@
 #window,
 #custom-shutdown,
 #mpd,
-#keyboard-state {
-    border-radius: 6px;
+#keyboard-state,
+#custom-notification {
     padding: 3px 6px;
     margin: 0 4px;
     color: #fff;

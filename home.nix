@@ -5,7 +5,6 @@
     [
       ./modules/clipse.nix
       ./modules/dark-theme.nix
-      ./modules/dunst.nix
       ./modules/hypridle.nix
       ./modules/hyprland.nix
       ./modules/hyprlock.nix
@@ -143,6 +142,7 @@
     nwg-look
     pavucontrol
     playerctl
+    swaynotificationcenter
 
     # Screenshot
     grim
