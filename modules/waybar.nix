@@ -185,7 +185,8 @@
 #custom-shutdown,
 #mpd,
 #keyboard-state,
-#custom-notification {
+#custom-notification,
+#language {
     padding: 3px 6px;
     margin: 0 4px;
     color: #fff;
