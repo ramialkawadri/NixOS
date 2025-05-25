@@ -61,6 +61,7 @@
     settings = {
       font_family = "HackNerdFont";
       font_size = 13;
+      confirm_os_window_close = 0;
     };
   };
 
