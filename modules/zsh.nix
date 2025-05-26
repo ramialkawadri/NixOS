@@ -25,6 +25,7 @@
     initContent = ''
       source ~/.p10k.zsh
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+      bindkey '^ ' autosuggest-accept # ctrl + space
     '';
   };
 }
