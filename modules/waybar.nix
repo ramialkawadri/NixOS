@@ -18,7 +18,6 @@
             "hyprland/language"
             "clock"
             "custom/notification"
-            "custom/shutdown"
           ];
 
           network = {
@@ -123,12 +122,6 @@
             };
             on-click = "pavucontrol";
           };
-
-          "custom/shutdown" = {
-            format = "";
-            on-click = "rofi -show power-menu -modi power-menu:${../dotfiles/rofi/rofi-power-menu}";
-            tooltip-format = "Power options";
-          };
         };
       };
 
@@ -147,7 +140,7 @@
 #waybar {
     color: @foreground;
     background-color: rgb(0, 0, 0);
-    padding: 0 4px;
+    padding: 0 6px;
 }
 
 #workspaces button {
@@ -182,7 +175,6 @@
 #idle_inhibitor,
 #scratchpad,
 #window,
-#custom-shutdown,
 #mpd,
 #keyboard-state,
 #custom-notification,

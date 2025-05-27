@@ -11,6 +11,7 @@
       ./modules/hyprpaper.nix
       ./modules/lazygit.nix
       ./modules/rofi.nix
+      ./modules/swaync.nix
       ./modules/tmux.nix
       ./modules/waybar.nix
       ./modules/zsh.nix
@@ -142,7 +143,6 @@
     nwg-look
     pavucontrol
     playerctl
-    swaynotificationcenter
 
     # Screenshot
     grim

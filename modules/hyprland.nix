@@ -29,7 +29,7 @@
     #################
 
     exec-once = [
-      "waybar & swaync & hyprpaper & hypridle"
+      "waybar & hyprpaper & hypridle"
       "systemctl --user start hyprpolkitagent"
       # Adding some sleep time to way for waybar to start
       "sleep 5 && 1password --silent"
