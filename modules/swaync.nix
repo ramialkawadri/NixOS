@@ -280,7 +280,7 @@ scale slider {
   background: none;
 }
 .widget-buttons-grid > flowbox > flowboxchild > button {
-  background-color: rgba(0,0,0, 0.7);
+  background-color: rgb(35, 35, 35);
   border-radius: 66px;
   padding: 14px;
   min-width: 24px;
@@ -289,7 +289,7 @@ scale slider {
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
-  background-color: rgba(20,20,20, 0.45);
+  background-color: rgb(50, 50, 50);
   color: @icon_primary;
 }
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
@@ -316,7 +316,6 @@ scale slider {
   transition: background-color 0.15s ease;
 }
 .control-center .notification-row:hover .notification-background {
-
   border-radius: 18px;
   background-color: @module_hover_bg;
 }
