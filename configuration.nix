@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       ./modules/git.nix
+      ./modules/kanata.nix
     ];
 
   # Bootloader
@@ -43,7 +44,7 @@
   users.users.ramikw = {
     isNormalUser = true;
     description = "ramikw";
-    extraGroups = [ "networkmanager" "wheel" "input" ];
+    extraGroups = [ "networkmanager" "wheel" "input" "uinput" ];
     packages = [];
   };
   programs.zsh.enable = true;
@@ -106,6 +107,15 @@
       "widget.use-xdg-desktop-portal.file-picker" = 1;
       "widget.use-xdg-desktop-portal.mime-handler" = 1;
     };
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = lib.mkForce [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gnome
+    ];
   };
 
   # Other settings
