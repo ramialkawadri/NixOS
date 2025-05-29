@@ -25,7 +25,7 @@
         )
 
         (defalias
-          cap (tap-hold-press $tap-time $hold-time caps (layer-toggle arrows))
+          cap (tap-hold-press $tap-time $hold-time esc (layer-toggle arrows))
         )
       '';
 
