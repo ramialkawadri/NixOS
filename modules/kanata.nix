@@ -6,12 +6,12 @@
       config = ''
         (defsrc
           caps
-          a s d f g h j k l ;
+          a s d f h j k l ;
         )
 
         (deflayer base
           @caps
-          @a  @s  @d  @f  @g  @h  @j  @k  @l  @;
+          @a  @s  @d  @f  @h  @j  @k  @l  @;
         )
 
         (defvar
@@ -31,7 +31,6 @@
           l (tap-hold $tap-time $hold-time l rsft)
           ; (tap-hold $tap-time $hold-time ; ralt)
 
-          g (tap-dance $tap-time (g enter))
           h (tap-dance $tap-time (h enter))
         )
       '';
