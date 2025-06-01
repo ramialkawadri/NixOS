@@ -199,7 +199,7 @@
       "$mainMod, C, killactive,"
       "$mainMod, M, exit,"
       "$mainMod, E, exec, nautilus"
-      "$mainMod, L, exec, hyprlock"
+      "Ctrl Shift, L, exec, hyprlock"
       "$mainMod, F, togglefloating,"
       "$mainMod, SPACE, exec, rofi -show drun"
       "ALT, F4, exec, rofi -show power-menu --no-text -modi power-menu:${../dotfiles/rofi/rofi-power-menu}"
@@ -207,11 +207,11 @@
       '', Print, exec, grim -g "$(slurp -d)" - | wl-copy''
       "SUPER, V, exec, kitty --class clipse -e clipse"
 
-      # Move focus with mainMod + arrow keys
-      "$mainMod, left, movefocus, l"
-      "$mainMod, right, movefocus, r"
-      "$mainMod, up, movefocus, u"
-      "$mainMod, down, movefocus, d"
+      # Move focus with mainMod + Vim motion
+      "$mainMod, h, movefocus, l"
+      "$mainMod, l, movefocus, r"
+      "$mainMod, k, movefocus, u"
+      "$mainMod, j, movefocus, d"
 
       # Switch workspaces with mainMod + [0-9]
       "$mainMod, 1, workspace, 1"
@@ -238,8 +238,8 @@
       "$mainMod SHIFT, 0, movetoworkspace, 10"
 
       # Swapping within the master layout"
-      "$mainMod CTRL, right, layoutmsg, swapnext"
-      "$mainMod CTRL, left, layoutmsg, swapprev"
+      "$mainMod CTRL, l, layoutmsg, swapnext"
+      "$mainMod CTRL, h, layoutmsg, swapprev"
 
       # Scroll through existing workspaces with mainMod + scroll"
       "$mainMod, mouse_down, workspace, e-1"
@@ -266,10 +266,10 @@
 
     binde = [
       # Resize bindings
-      "$mainMod ALT, right, resizeactive, 20 0"
-      "$mainMod ALT, left, resizeactive, -20 0"
-      "$mainMod ALT, up, resizeactive, 0 -20"
-      "$mainMod ALT, down, resizeactive, 0 20"
+      "$mainMod ALT, l, resizeactive, 20 0"
+      "$mainMod ALT, h, resizeactive, -20 0"
+      "$mainMod ALT, k, resizeactive, 0 -20"
+      "$mainMod ALT, j, resizeactive, 0 20"
     ];
 
     bindel = [

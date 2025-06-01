@@ -5,27 +5,34 @@
     keyboards.main = {
       config = ''
         (defsrc
-          caps s d f
-          h j k l
+          caps
+          a s d f g h j k l ;
+        )
+
+        (deflayer base
+          @caps
+          @a  @s  @d  @f  @g  @h  @j  @k  @l  @;
         )
 
         (defvar
-          tap-time 250
-          hold-time 200
-        )
-
-        (deflayer default
-          @cap _ _ _
-          _ _ _ _
-        )
-
-        (deflayer arrows
-          _ lctrl lmet lalt
-          left down up rght
+          tap-time  200
+          hold-time 210
         )
 
         (defalias
-          cap (tap-hold-press $tap-time $hold-time esc (layer-toggle arrows))
+          caps esc
+          a (tap-hold $tap-time $hold-time a lalt)
+          s (tap-hold $tap-time $hold-time s lsft)
+          d (tap-hold $tap-time $hold-time d lctl)
+          f (tap-hold $tap-time $hold-time f lmet)
+
+          j (tap-hold $tap-time $hold-time j rmet)
+          k (tap-hold $tap-time $hold-time k rctl)
+          l (tap-hold $tap-time $hold-time l rsft)
+          ; (tap-hold $tap-time $hold-time ; ralt)
+
+          g (tap-dance $tap-time (g enter))
+          h (tap-dance $tap-time (h enter))
         )
       '';
 
