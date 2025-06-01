@@ -15,12 +15,12 @@
         )
 
         (defvar
-          tap-time  160
-          hold-time 180
+          tap-time  155
+          hold-time 155
         )
 
         (defalias
-          caps esc
+          caps (tap-dance 200 (esc caps))
           a (tap-hold $tap-time $hold-time a lalt)
           s (tap-hold $tap-time $hold-time s lsft)
           d (tap-hold $tap-time $hold-time d lctl)
