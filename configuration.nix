@@ -10,13 +10,15 @@
 
   # Bootloader
   boot = {
-    loader.efi.canTouchEfiVariables = true;
+    loader = {
+        efi.canTouchEfiVariables = true;
+        timeout = 0;
+    };
     loader.grub = {
       enable = true;
       device = "nodev";
       useOSProber = true;
       efiSupport = true;
-      timeout = 0;
       timeoutStyle = "hidden";
     };
     plymouth.enable = true;
