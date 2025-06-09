@@ -3,7 +3,7 @@
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
-    font = "HackNerdFont 14";
+    font = "HackNerdFont 12";
     theme = ../dotfiles/rofi/theme.rasi;
     plugins = [ pkgs.rofi-emoji-wayland ];
     extraConfig = {

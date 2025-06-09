@@ -20,7 +20,7 @@
         {
           text = "$TIME";
           color = "rgb(c3c3c3)";
-          font_size = 96;
+          font_size = 84;
           font_family = "HackNerdFont";
           position = "0, 160";
           shadow_passes = 4;
