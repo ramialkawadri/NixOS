@@ -16,6 +16,8 @@
       device = "nodev";
       useOSProber = true;
       efiSupport = true;
+      timeout = 0;
+      timeoutStyle = "hidden";
     };
     plymouth.enable = true;
   };
