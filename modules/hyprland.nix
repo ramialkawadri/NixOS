@@ -21,7 +21,7 @@
     ];
 
     monitor = [
-      ", highres, auto, 1.333333, bitdepth, 10"
+      ", highrr, auto, 1, bitdepth, 10"
     ];
 
     #################
@@ -110,7 +110,7 @@
     misc = {
       disable_hyprland_logo = true;
       focus_on_activate = true;
-      vrr = 1;
+      vrr = 2;
       font_family = "HackNerdFont";
       middle_click_paste = false;
     };
