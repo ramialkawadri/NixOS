@@ -29,6 +29,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [ "quiet" "acpi_osi=\"!Windows 2015\"" ];
   boot.blacklistedKernelModules = [ "uvcvideo" "nouveau" ];
+  boot.consoleLogLevel = 0;
 
   # Networking
   networking.hostName = "ramikw";
