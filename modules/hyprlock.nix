@@ -20,7 +20,7 @@
         {
           text = "$TIME";
           color = "rgb(c3c3c3)";
-          font_size = 84;
+          font_size = 78;
           font_family = "HackNerdFont";
           position = "0, 160";
           shadow_passes = 4;
@@ -29,7 +29,7 @@
 
       input-field = [
         {
-          size = "500, 50";
+          size = "460, 45";
           font_family = "HackNerdFont";
           inner_color = "#ffffff";
           outer_color = "#000000";
