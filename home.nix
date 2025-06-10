@@ -100,7 +100,7 @@
     cargo
     clippy
     delta
-    dotnet-sdk
+    dotnet-sdk_9
     gcc
     jdk
     nodejs
