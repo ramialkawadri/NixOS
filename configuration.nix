@@ -49,7 +49,7 @@
   users.users.ramikw = {
     isNormalUser = true;
     description = "ramikw";
-    extraGroups = [ "networkmanager" "wheel" "input" "uinput" ];
+    extraGroups = [ "networkmanager" "wheel" "input" "uinput" "docker" ];
     packages = [];
   };
   programs.zsh.enable = true;
@@ -128,6 +128,7 @@
   services.blueman.enable = true;
   hardware.bluetooth.enable = true;
   hardware.logitech.wireless.enable = true;
+  virtualisation.docker.enable = true;
 
   # Environment variables
   environment.sessionVariables = {

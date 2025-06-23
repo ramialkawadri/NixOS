@@ -100,6 +100,7 @@
     cargo
     clippy
     delta
+    docker-compose
     dotnet-sdk_9
     gcc
     jdk
