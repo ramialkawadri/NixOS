@@ -104,6 +104,8 @@
     dotnet-sdk_9
     gcc
     jdk
+    kubectl
+    minikube
     nodejs
     postman
     python314
