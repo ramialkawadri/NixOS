@@ -171,6 +171,8 @@
     dates = "weekly";
     options = "--delete-older-than 7d";
   };
+  nix.optimise.automatic = true;
+  nix.optimise.dates = [ "9:00" ];
 
   # Auto system update
   system.autoUpgrade = {

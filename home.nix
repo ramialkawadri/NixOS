@@ -84,6 +84,7 @@
     vlc
     vscode
 
+    baobab  # Disk Usage Analyzer
     gnome-calculator
     gnome-characters
     gnome-clocks
