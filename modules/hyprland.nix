@@ -38,7 +38,7 @@
       ''hyprctl setcursor "Adwaita" 24''
 
       "[workspace 1 silent] firefox"
-      "[workspace 4 silent] sleep 6; anki"
+      "[workspace 4 silent] anki"
       "[workspace 4 silent] gnome-clocks"
     ];
 
