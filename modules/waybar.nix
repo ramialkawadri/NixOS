@@ -127,8 +127,9 @@
 
       # Copied from: https://github.com/mechakotik/dots/tree/main/.config/waybar
       style = ''
-@define-color foreground #eeeeee;
-@define-color foreground-inactive #aaaaaa;
+@define-color background #fafafa;
+@define-color foreground #333333;
+@define-color foreground-inactive #4d4d4d;
 
 * {
     font-family: HackNerdFont;
@@ -139,20 +140,22 @@
 
 #waybar {
     color: @foreground;
-    background-color: rgb(0, 0, 0);
+    background-color: @background;
     padding: 0 6px;
 }
 
 #workspaces button {
+    border-radius: 0;
     color: @foreground;
     padding: 0.35em;
-    border: 3px solid transparent;
+    border-bottom: 3px solid transparent;
     color: @foreground-inactive;
 }
 
 #workspaces button:hover,
 #workspaces button.active:hover {
-    color: #000;
+    background: @foreground;
+    color: @background;
 }
 
 #workspaces button.active {
@@ -186,7 +189,7 @@
 #language {
     padding: 3px 6px;
     margin: 0 4px;
-    color: #fff;
+    color: @foreground;
 }
 
 #keyboard-state label {
