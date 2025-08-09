@@ -184,6 +184,15 @@
       "maxsize 1 1, class:^(xwaylandvideobridge)$"
       "noblur, class:^(xwaylandvideobridge)$"
       "nofocus, class:^(xwaylandvideobridge)$"
+
+      # Kitty
+      "opacity 0.9, class:^(kitty)$"
+    ];
+
+    layerrule = [
+        "blur, swaync-control-center"
+        "ignorezero, swaync-notification-window"
+        "animation slide right, swaync-control-center"
     ];
 
     ###################

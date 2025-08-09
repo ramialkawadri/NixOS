@@ -4,7 +4,7 @@
   imports = 
     [
       ./modules/clipse.nix
-      ./modules/dark-theme.nix
+      ./modules/theme.nix
       ./modules/hypridle.nix
       ./modules/hyprland.nix
       ./modules/hyprlock.nix

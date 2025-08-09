@@ -2,15 +2,15 @@
 /* Author: Newman Sanchez (https://github.com/newmanls) */
 
 * {
-    bg0:    #222831;
-    bg1:    #393E46;
-    bg2:    #67707e;
-    bg3:    #1972c2;
-    bg4:    #58a4e9;
-    fg0:    #D8DEE9;
-    fg1:    #ECEFF4;
-    fg2:    #D8DEE9;
-    fg3:    #b8bdc6;
+    bg0:    #fafafa;
+    bg1:    #f4f2f3;
+    bg2:    #d3d4d9;
+    bg3:    #c0c0c0;
+
+    fg0:    #0b0014;
+    fg1:    #4c4c4c;
+    fg2:    #636363;
+    fg3:    #beb7a4;
 }
 
 /* Rounded-template start */
@@ -28,7 +28,7 @@ window {
     y-offset:       calc(50% - 176px);
     width:          660;
     border-radius:  24px;
-    border-color:   @bg4;
+    border-color:   @bg3;
     border:         3px;
 
     background-color:   @bg0;
@@ -109,8 +109,3 @@ element-text {
 }
 
 /* Rounded-template end */
-
-element selected {
-    text-color: @fg0;
-}
-

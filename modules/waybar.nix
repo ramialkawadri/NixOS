@@ -150,6 +150,11 @@
     color: @foreground-inactive;
 }
 
+#workspaces button:hover,
+#workspaces button.active:hover {
+    color: #000;
+}
+
 #workspaces button.active {
     border-bottom-color: @foreground;
     color: @foreground;

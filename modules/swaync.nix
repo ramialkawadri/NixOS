@@ -9,7 +9,8 @@
       layer = "overlay";
       control-center-layer = "top";
       layer-shell = true;
-      cssPriority = "application";
+      layer-shell-cover-screen = false;
+      cssPriority = "user";
       control-center-width = 380;
       control-center-margin-top = 0;
       control-center-margin-bottom = 0;
@@ -19,8 +20,8 @@
       notification-inline-replies = false;
       notification-window-width = 380;
       notification-icon-size = 48;
-      notification-body-image-height = 180;
-      notification-body-image-width = 180;
+      notification-body-image-height = 240;
+      notification-body-image-width = 240;
       timeout = 8;
       timeout-low = 4;
       timeout-critical = 0;
@@ -92,8 +93,8 @@
 
 @define-color theme_fg rgba(248, 248, 252, 0.98); /* Primary Text */
 @define-color theme_fg_secondary rgba(215, 220, 225, 0.78); /* Secondary Text */
-@define-color theme_bg rgb(0, 0, 0); /* Panel/Background */
-@define-color popup_bg rgb(0, 0, 0); /* Floating Notification Background */
+@define-color theme_bg rgba(22, 22, 28, 0.22); /* Panel/Background */
+@define-color popup_bg rgba(20, 25, 25, 0.5); /* Floating Notification Background */
 @define-color module_bg rgba(20, 20, 20, 0.46); /* Default Module Background */
 @define-color module_hover_bg rgba(210, 215, 225, 0.35); /* Module Hover */
 @define-color button_bg rgba(130, 135, 145, 0.28); /* Button Default */
@@ -133,7 +134,7 @@
   border-top-color: @border_light;
   border-bottom-color: @border_dark;
   border-radius: 0px;
-  padding: 18px;
+  padding: 28px;
   min-width: 380px;
 }
 
@@ -280,7 +281,7 @@ scale slider {
   background: none;
 }
 .widget-buttons-grid > flowbox > flowboxchild > button {
-  background-color: rgb(35, 35, 35);
+  background-color: rgba(0,0,0, 0.7);
   border-radius: 66px;
   padding: 14px;
   min-width: 24px;
@@ -289,7 +290,7 @@ scale slider {
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
-  background-color: rgb(50, 50, 50);
+  background-color: rgba(20,20,20, 0.45);
   color: @icon_primary;
 }
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
