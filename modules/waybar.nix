@@ -163,7 +163,7 @@
 }
 
 tooltip {
-    background: @background;
+    background: #e1e1e1;
 }
 
 tooltip label {
