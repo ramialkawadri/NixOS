@@ -164,7 +164,7 @@
       "float, class:(clipse)"
       "size 622 652, class:(clipse)"
       "stayfocused, class:(clipse)"
-      "opacity 0.90 override, class:^(clipse)$"
+      "opacity 0.9 override, class:^(clipse)$"
 
       # MEGAsync
       "float, title:(MEGAsync)"

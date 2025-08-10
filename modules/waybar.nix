@@ -74,11 +74,11 @@
               weeks-pos = "left";
               on-scroll = 1;
               format = {
-                months = "<span color='#fff'><b>{}</b></span>";
-                days = "<span color='#fff'><b>{}</b></span>";
-                weeks = "<span color='#58a4e9'><b>{:%V}</b></span>";
-                weekdays = "<span color='#ffcc66'><b>{}</b></span>";
-                today = "<span color='#ff6699'><b><u>{}</u></b></span>";
+                months = "<span color='#333'><b>{}</b></span>";
+                days = "<span color='#333'><b>{}</b></span>";
+                weeks = "<span color='#2b8be3'><b>{:%V}</b></span>";
+                weekdays = "<span color='#fa0'><b>{}</b></span>";
+                today = "<span color='#f37'><b><u>{}</u></b></span>";
               };
             };
           };
@@ -146,7 +146,6 @@
 
 #workspaces button {
     border-radius: 0;
-    color: @foreground;
     padding: 0.35em;
     border-bottom: 3px solid transparent;
     color: @foreground-inactive;
@@ -161,6 +160,15 @@
 #workspaces button.active {
     border-bottom-color: @foreground;
     color: @foreground;
+}
+
+tooltip {
+    background: @background;
+}
+
+tooltip label {
+    color: @foreground;
+    text-shadow: none;
 }
 
 #memory,
