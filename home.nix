@@ -117,7 +117,6 @@
     bash-language-server
     bibtex-tidy
     clang-tools
-    csharp-ls
     dockerfile-language-server-nodejs
     emmet-ls
     eslint
@@ -130,6 +129,7 @@
     nil
     python312Packages.debugpy
     python312Packages.python-lsp-server
+    roslyn-ls
     rust-analyzer
     texlab
     tree-sitter
