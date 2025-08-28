@@ -112,6 +112,7 @@
     python314
     rustc
     rustfmt
+    sqlite
 
     # Neovim lsps and treesitter
     bash-language-server
@@ -152,6 +153,10 @@
     grim
     slurp
   ];
+
+  home.sessionVariables = {
+      sqlite_clib_path = "${pkgs.sqlite.out}/lib/libsqlite3${pkgs.hostPlatform.extensions.sharedLibrary}";
+  };
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
