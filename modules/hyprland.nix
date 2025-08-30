@@ -186,7 +186,7 @@
       "nofocus, class:^(xwaylandvideobridge)$"
 
       # Kitty
-      "opacity 0.9, class:^(kitty)$"
+      "opacity 0.92, class:^(kitty)$"
     ];
 
     layerrule = [
