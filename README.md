@@ -3,7 +3,7 @@
 1. `bash ./install.bash`
 
 # Links
-- Install: https://nixos.org/manual/nixos/stable/#sec-installation-manual
+- [Install](https://nixos.org/manual/nixos/stable/#sec-installation-manual)
 
 # Connecting to Wifi
 1. `nmcli radio wifi on`
