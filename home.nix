@@ -113,6 +113,7 @@
     rustc
     rustfmt
     sqlite
+    vscode-extensions.vadimcn.vscode-lldb
 
     # Neovim lsps and treesitter
     bash-language-server
@@ -157,6 +158,10 @@
   home.sessionVariables = {
       sqlite_clib_path = "${pkgs.sqlite.out}/lib/libsqlite3${pkgs.hostPlatform.extensions.sharedLibrary}";
   };
+
+  home.sessionPath = [
+    "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter"
+  ];
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

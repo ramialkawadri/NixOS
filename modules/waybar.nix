@@ -101,6 +101,7 @@
             exec-if = "which swaync-client";
             exec = "swaync-client -swb";
             on-click = "swaync-client -t -sw";
+            on-click-right = "swaync-client -d -sw";
             escape = true;
           };
 
@@ -182,7 +183,6 @@ tooltip label {
 #memory,
 #disk,
 #temperature,
-#backlight,
 #network,
 #pulseaudio,
 #wireplumber,
