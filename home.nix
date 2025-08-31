@@ -104,6 +104,7 @@
     docker-compose
     dotnet-sdk_9
     gcc
+    grcov
     jdk
     kubectl
     minikube
