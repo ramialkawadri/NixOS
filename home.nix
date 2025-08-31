@@ -161,6 +161,7 @@
 
   home.sessionPath = [
     "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter"
+    "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/lldb/bin"
   ];
 
   # This value determines the home Manager release that your
