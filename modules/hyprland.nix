@@ -37,7 +37,7 @@
       "avizo-service"
       ''hyprctl setcursor "Adwaita" 24''
 
-      "[workspace 1 silent] firefox"
+      "[workspace 1 silent] brave"
       "[workspace 4 silent] anki"
       "[workspace 4 silent] gnome-clocks"
     ];
@@ -204,7 +204,7 @@
     bind = [
       # General bindings
       "$mainMod, Q, exec, kitty"
-      "$mainMod, B, exec, firefox"
+      "$mainMod, B, exec, brave"
       "$mainMod, C, killactive,"
       "$mainMod, M, exit,"
       "$mainMod, E, exec, nautilus"

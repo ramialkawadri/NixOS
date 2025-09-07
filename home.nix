@@ -132,8 +132,8 @@
     nil
     python312Packages.debugpy
     python312Packages.python-lsp-server
-    stable.roslyn-ls
     rust-analyzer
+    stable.roslyn-ls
     texlab
     tree-sitter
     typescript-language-server
