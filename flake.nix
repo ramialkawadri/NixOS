@@ -1,8 +1,7 @@
 {
-  description = "A simple NixOS flake";
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,7 +17,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, solaar, sddm-sugar-candy-nix, ... }: {
+  outputs = { nixpkgs, nixpkgs-stable, home-manager, solaar, sddm-sugar-candy-nix, ... }: {
     nixosConfigurations = {
       ramikw = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -37,6 +36,12 @@
             nixpkgs = {
               overlays = [
                 sddm-sugar-candy-nix.overlays.default
+                (final: _: {
+                   stable = import nixpkgs-stable {
+                     inherit (final.stdenv.hostPlatform) system;
+                     inherit (final) config;
+                   };
+                 })
               ];
             };
           }
