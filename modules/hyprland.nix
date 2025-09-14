@@ -131,10 +131,6 @@
       };
     };
 
-    gestures = {
-      workspace_swipe = true;
-    };
-
     ##############################
     ### WINDOWS AND WORKSPACES ###
     ##############################
