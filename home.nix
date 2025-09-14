@@ -120,7 +120,7 @@
     bash-language-server
     bibtex-tidy
     clang-tools
-    dockerfile-language-server-nodejs
+    dockerfile-language-server
     emmet-ls
     eslint
     gdb
