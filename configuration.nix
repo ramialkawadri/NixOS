@@ -171,6 +171,18 @@
     enable = true;
   };
 
+  # PostgreSQL
+  services.postgresql = {
+      enable = true;
+      ensureDatabases = [ "default" ];
+      authentication = pkgs.lib.mkOverride 10 ''
+        #type database  DBuser  auth-method
+        local all       all     trust
+        host  all       all     127.0.0.1/32  trust
+        host  all       all     ::1/128       trust
+      '';
+  };
+
   # This and the kernal param "acpi_osi=\"!Windows 2015\"" fixes sleep issues for Gigabyte.
   # https://wiki.archlinux.org/title/Power_management/Wakeup_triggers#Gigabyte_motherboards
   services.udev.extraRules = ''
