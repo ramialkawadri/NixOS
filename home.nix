@@ -100,6 +100,7 @@
 
     cargo
     clippy
+    csharpier
     delta
     docker-compose
     dotnet-sdk_9

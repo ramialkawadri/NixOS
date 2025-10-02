@@ -183,6 +183,11 @@
       '';
   };
 
+  # Keyring
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.sddm.enableGnomeKeyring = true;
+
+
   # This and the kernal param "acpi_osi=\"!Windows 2015\"" fixes sleep issues for Gigabyte.
   # https://wiki.archlinux.org/title/Power_management/Wakeup_triggers#Gigabyte_motherboards
   services.udev.extraRules = ''
