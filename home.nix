@@ -98,6 +98,7 @@
     papers
     simple-scan
 
+    azure-cli
     bicep-lsp
     cargo
     clippy
