@@ -98,6 +98,7 @@
     papers
     simple-scan
 
+    bicep-lsp
     cargo
     clippy
     csharpier
