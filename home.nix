@@ -99,7 +99,7 @@
     simple-scan
 
     azure-cli
-    bicep-lsp
+    bicep
     cargo
     clippy
     csharpier
