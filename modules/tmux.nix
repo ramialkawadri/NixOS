@@ -66,7 +66,6 @@ bind-key g set-option -g status
 
 # Theme
 set -g status-justify "left"
-set -g status "off"
 set -g status-left-style "none"
 set -g message-command-style "fg=#ffffff,bg=#818181"
 set -g status-right-style "none"

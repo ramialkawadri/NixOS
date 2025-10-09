@@ -99,6 +99,7 @@
     simple-scan
 
     azure-cli
+    azurite
     bicep
     cargo
     clippy
@@ -108,11 +109,14 @@
     dotnet-sdk_9
     gcc
     grcov
+    grpc
     jdk
     kubectl
     minikube
     nodejs
     postman
+    protobuf_29
+    protols
     python314
     rustc
     rustfmt
