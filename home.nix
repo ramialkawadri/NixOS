@@ -107,6 +107,7 @@
     delta
     docker-compose
     dotnet-sdk_9
+    fzf
     gcc
     grcov
     grpc
