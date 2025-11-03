@@ -7,10 +7,12 @@
       os.editPreset = "nvim";
 
       git = {
-        paging = {
-          colorArg = "always";
-          pager = "delta";
-        };
+        pager = [
+          {
+            colorArg = "always";
+            pager = "delta";
+          }
+        ];
       };
 
     };
