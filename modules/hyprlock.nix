@@ -10,7 +10,7 @@
 
       background = [
         {
-          path = "${../imgs/background.jpg}";
+          path = "${../imgs/background2.jpg}";
           blur_passes = 2;
           blur_size = 4;
         }

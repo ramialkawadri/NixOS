@@ -94,7 +94,7 @@
     sugarCandyNix = {
       enable = true;
       settings = {
-        Background = lib.cleanSource ./imgs/background.jpg;
+        Background = lib.cleanSource ./imgs/background2.jpg;
         DimBackgroundImage = 0.4;
         ScaleImageCropped = true;
         ScreenWidth = 2560;

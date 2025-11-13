@@ -3,8 +3,8 @@
   services.hyprpaper = {
     enable = true;
     settings = {
-      preload = [ "${../imgs/background.jpg}" ];
-      wallpaper = [ ",${../imgs/background.jpg}" ];
+      preload = [ "${../imgs/background2.jpg}" ];
+      wallpaper = [ ",${../imgs/background2.jpg}" ];
     };
   };
 }
