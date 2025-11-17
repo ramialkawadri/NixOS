@@ -76,6 +76,7 @@
   ];
   fonts.packages = with pkgs; [ 
     corefonts
+    noto-fonts
     nerd-fonts.hack
   ];
   programs._1password.enable = true;
