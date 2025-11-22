@@ -162,6 +162,9 @@
       "stayfocused, class:(clipse)"
       "opacity 0.9 override, class:^(clipse)$"
 
+      # Calculator
+      "float, title:(Calculator)"
+
       # MEGAsync
       "float, title:(MEGAsync)"
       "bordersize 0, title:(MEGAsync)"
