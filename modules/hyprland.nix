@@ -47,14 +47,14 @@
     #####################
 
     general = {
-      gaps_in = 2;
+      gaps_in = 0;
       gaps_out = 0;
 
-      border_size = 3;
+      border_size = 4;
       resize_on_border = true;
 
-      "col.active_border" = "rgb(58a4e9)";
-      "col.inactive_border" = "rgba(595959aa)";
+      "col.active_border" = "rgb(2b8be3)";
+      "col.inactive_border" = "rgb(8c8c8c)";
 
       allow_tearing = false;
       layout = "master";
