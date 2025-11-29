@@ -17,7 +17,7 @@
     };
   };
 
-  outputs = { nixpkgs, nixpkgs-stable, home-manager, solaar, sddm-sugar-candy-nix, ... }: {
+  outputs = { nixpkgs, home-manager, solaar, sddm-sugar-candy-nix, ... }: {
     nixosConfigurations = {
       ramikw = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -37,7 +37,7 @@
               overlays = [
                 sddm-sugar-candy-nix.overlays.default
                 (final: _: {
-                   stable = import nixpkgs-stable {
+                   stable = import nixpkgs {
                      inherit (final.stdenv.hostPlatform) system;
                      inherit (final) config;
                    };
