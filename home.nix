@@ -106,7 +106,7 @@
     csharpier
     delta
     docker-compose
-    dotnet-sdk_9
+    dotnet-sdk_10
     fzf
     gcc
     grcov
@@ -165,7 +165,7 @@
   ];
 
   home.sessionVariables = {
-      sqlite_clib_path = "${pkgs.sqlite.out}/lib/libsqlite3${pkgs.hostPlatform.extensions.sharedLibrary}";
+      sqlite_clib_path = "${pkgs.sqlite.out}/lib/libsqlite3${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}";
   };
 
   home.sessionPath = [

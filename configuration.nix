@@ -92,19 +92,19 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    sugarCandyNix = {
-      enable = true;
-      settings = {
-        Background = lib.cleanSource ./imgs/background2.jpg;
-        DimBackgroundImage = 0.4;
-        ScaleImageCropped = true;
-        ScreenWidth = 2560;
-        ScreenHeight = 1440;
-        Font = "HackNerdFont";
-        RoundCorners = 6;
-        AccentColor = "#80a1be";
+    extraPackages = with pkgs; [
+      kdePackages.qtsvg
+      kdePackages.qtmultimedia
+      kdePackages.qtvirtualkeyboard
+    ];
+    theme = "${pkgs.sddm-astronaut.override {
+      themeConfig = {
+        FullBlur = true;
+        BlurMax = 64;
+        Blur = 1.0;
+        DimBackground = 0.2;
       };
-    };
+    }}/share/sddm/themes/sddm-astronaut-theme";
   };
 
   xdg.portal = {
