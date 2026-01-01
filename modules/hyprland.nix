@@ -151,47 +151,47 @@
 
     windowrule = [
       # "Smart gaps" / "No gaps when only"
-      "bordersize 0, floating:0, onworkspace:w[tv1]"
-      "rounding 0, floating:0, onworkspace:w[tv1]"
-      "bordersize 0, floating:0, onworkspace:f[1]"
-      "rounding 0, floating:0, onworkspace:f[1]"
+      "border_size 0, match:float false, match:workspace w[tv1]"
+      "rounding 0, match:float false, match:workspace w[tv1]"
+      "border_size 0, match:float false, match:workspace f[1]"
+      "rounding 0, match:float false, match:workspace f[1]"
 
       # Clipse
-      "float, class:(clipse)"
-      "size 622 652, class:(clipse)"
-      "stayfocused, class:(clipse)"
-      "opacity 0.9 override, class:^(clipse)$"
+      "float on, match:class clipse"
+      "size 622 652, match:class clipse"
+      "stay_focused on, match:class clipse"
+      "opacity 0.9 override, match:class ^clipse$"
 
       # Calculator
-      "float, title:(Calculator)"
+      "float on, match:title Calculator"
 
       # MEGAsync
-      "float, title:(MEGAsync)"
-      "bordersize 0, title:(MEGAsync)"
-      "noblur, title:(MEGAsync)"
+      "float on, match:title MEGAsync"
+      "border_size 0, match:title MEGAsync"
+      "no_blur on, match:title MEGAsync"
 
       # Ignore maximize requests from apps. You'll probably like this.
-      "suppressevent maximize, class:.*"
+      "suppress_event maximize, match:class .*"
 
       # Fix some dragging issues with XWayland
-      "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+      "no_focus on,match:class ^$,match:title ^$,match:xwayland true,match:float true,match:fullscreen false,match:pin false"
 
-      # Screensharing
-      "opacity 0.0 override, class:^(xwaylandvideobridge)$"
-      "noanim, class:^(xwaylandvideobridge)$"
-      "noinitialfocus, class:^(xwaylandvideobridge)$"
-      "maxsize 1 1, class:^(xwaylandvideobridge)$"
-      "noblur, class:^(xwaylandvideobridge)$"
-      "nofocus, class:^(xwaylandvideobridge)$"
+      # Screen sharing
+      "opacity 0.0 override, match:class ^(xwaylandvideobridge)$"
+      "no_anim on, match:class ^(xwaylandvideobridge)$"
+      "no_initial_focus on, match:class ^(xwaylandvideobridge)$"
+      "max_size 1 1, match:class ^(xwaylandvideobridge)$"
+      "no_blur on, match:class ^(xwaylandvideobridge)$"
+      "no_focus on, match:class ^(xwaylandvideobridge)$"
 
       # Kitty
-      "opacity 0.94, class:^(kitty)$"
+      "opacity 0.94, match:class ^kitty$"
     ];
 
     layerrule = [
-        "blur, swaync-control-center"
-        "ignorezero, swaync-notification-window"
-        "animation slide right, swaync-control-center"
+        "blur on, match:namespace swaync-control-center"
+        "ignore_alpha 0, match:namespace swaync-notification-window"
+        "animation slide right, match:namespace swaync-control-center"
     ];
 
     ###################
