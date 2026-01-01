@@ -1,10 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     history.size = 10000;
+    dotDir = "${config.xdg.configHome}/zsh";
     plugins = [
       # Used to start nix-shell in zsh
       {
