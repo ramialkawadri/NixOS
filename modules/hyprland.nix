@@ -189,9 +189,13 @@
     ];
 
     layerrule = [
-        "blur on, match:namespace swaync-control-center"
-        "ignore_alpha 0, match:namespace swaync-notification-window"
-        "animation slide right, match:namespace swaync-control-center"
+      "blur on, match:namespace swaync-control-center"
+      "ignore_alpha 0, match:namespace swaync-notification-window"
+      "animation slide right, match:namespace swaync-control-center"
+    ];
+
+    echosystem = [
+      "no_update_news true"
     ];
 
     ###################
