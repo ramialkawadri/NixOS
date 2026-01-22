@@ -118,7 +118,6 @@
     postman
     protobuf_29
     protols
-    python314
     rustc
     rustfmt
     sqlite
@@ -134,14 +133,15 @@
     gdb
     hyprls
     jdt-language-server
+    jupyter
     ltex-ls
     lua-language-server
     netcoredbg
     nil
-    python312Packages.debugpy
-    python312Packages.python-lsp-server
-    rust-analyzer
+    python313Packages.debugpy
+    python313Packages.python-lsp-server
     roslyn-ls
+    rust-analyzer
     texlab
     tree-sitter
     typescript-language-server
