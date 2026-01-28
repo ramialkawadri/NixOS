@@ -55,6 +55,10 @@
     };
   };
 
+  services.ollama = {
+    enable = true;
+  };
+
   programs.kitty = {
     enable = true;
     themeFile = "Hybrid";
