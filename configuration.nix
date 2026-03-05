@@ -61,10 +61,10 @@
   services.flatpak.enable = true;
   environment.systemPackages = with pkgs; [
     brave
+    fastfetch
     htop
     kitty
     lshw
-    neofetch
     pciutils
     ripgrep
     tldr
