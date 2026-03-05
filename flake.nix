@@ -12,9 +12,15 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, solaar, ... }: {
-    nixosConfigurations = {
-      ramikw = nixpkgs.lib.nixosSystem {
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      solaar,
+      ...
+    }:
+    {
+      nixosConfigurations.ramikw = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           solaar.nixosModules.default
@@ -30,17 +36,15 @@
             nixpkgs = {
               overlays = [
                 (final: _: {
-                   stable = import nixpkgs {
-                     inherit (final.stdenv.hostPlatform) system;
-                     inherit (final) config;
-                   };
-                 })
+                  stable = import nixpkgs {
+                    inherit (final.stdenv.hostPlatform) system;
+                    inherit (final) config;
+                  };
+                })
               ];
             };
           }
-
         ];
       };
     };
-  };
 }
