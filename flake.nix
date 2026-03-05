@@ -21,7 +21,6 @@
     }:
     {
       nixosConfigurations.ramikw = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         modules = [
           solaar.nixosModules.default
           home-manager.nixosModules.home-manager
