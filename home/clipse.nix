@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   services.clipse = {
     enable = true;
     imageDisplay = {

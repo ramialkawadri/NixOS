@@ -1,18 +1,20 @@
-{ config, pkgs, lib, ... }:
-
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./modules/git.nix
-      ./modules/kanata.nix
-    ];
+  pkgs,
+  lib,
+  username,
+  ...
+}:
+{
+  imports = [
+    ./git.nix
+    ./kanata.nix
+  ];
 
   # Bootloader
   boot = {
     loader = {
-        efi.canTouchEfiVariables = true;
-        timeout = 0;
+      efi.canTouchEfiVariables = true;
+      timeout = 0;
     };
     loader.grub = {
       enable = true;
@@ -25,16 +27,19 @@
   };
 
   # Kernel
-  boot.kernel.sysctl = { "vm.swappiness" = 4; };
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 4;
+  };
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelParams = [ "quiet" "acpi_osi=\"!Windows 2015\"" ];
-  boot.blacklistedKernelModules = [ "uvcvideo" "nouveau" ];
+  boot.kernelParams = [
+    "quiet"
+    "acpi_osi=\"!Windows 2015\""
+  ];
+  boot.blacklistedKernelModules = [
+    "uvcvideo"
+    "nouveau"
+  ];
   boot.consoleLogLevel = 0;
-
-  # Networking
-  networking.hostName = "ramikw";
-  networking.networkmanager.enable = true;
-  networking.firewall.enable = true;
 
   # Language
   time.timeZone = "Europe/Oslo";
@@ -45,18 +50,32 @@
     variant = "";
   };
 
+  # Networking
+  networking.hostName = username;
+  networking.networkmanager.enable = true;
+  networking.firewall.enable = true;
+
   # Other
-  users.users.ramikw = {
+  users.users.${username} = {
     isNormalUser = true;
-    description = "ramikw";
-    extraGroups = [ "networkmanager" "wheel" "input" "uinput" "docker" ];
-    packages = [];
+    description = username;
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "input"
+      "uinput"
+      "docker"
+    ];
+    packages = [ ];
   };
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
   # Packages
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nixpkgs.config.allowUnfree = true;
   services.flatpak.enable = true;
   environment.systemPackages = with pkgs; [
@@ -74,7 +93,7 @@
     wl-clipboard
     zsh-powerlevel10k
   ];
-  fonts.packages = with pkgs; [ 
+  fonts.packages = with pkgs; [
     corefonts
     noto-fonts
     nerd-fonts.hack
@@ -89,22 +108,25 @@
 
   # Hyprland
   programs.hyprland.enable = true;
+  services.xserver.enable = true;
   services.displayManager.sddm = {
     enable = true;
-    wayland.enable = true;
+    wayland.enable = false;
     extraPackages = with pkgs; [
       kdePackages.qtsvg
       kdePackages.qtmultimedia
       kdePackages.qtvirtualkeyboard
     ];
-    theme = "${pkgs.sddm-astronaut.override {
-      themeConfig = {
-        FullBlur = true;
-        BlurMax = 64;
-        Blur = 1.0;
-        DimBackground = 0.2;
-      };
-    }}/share/sddm/themes/sddm-astronaut-theme";
+    theme = "${
+      pkgs.sddm-astronaut.override {
+        themeConfig = {
+          FullBlur = true;
+          BlurMax = 64;
+          Blur = 1.0;
+          DimBackground = 0.2;
+        };
+      }
+    }/share/sddm/themes/sddm-astronaut-theme";
   };
 
   xdg.portal = {
@@ -138,16 +160,6 @@
     openFirewall = true;
   };
 
-  # Nvidia-driver
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = true;
-    open = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
-  };
-
   # Pipewire
   services.pipewire = {
     enable = true;
@@ -172,43 +184,7 @@
     enable = true;
   };
 
-  # PostgreSQL
-  services.postgresql = {
-      enable = true;
-      ensureDatabases = [ "default" ];
-      authentication = pkgs.lib.mkOverride 10 ''
-        #type database  DBuser  auth-method
-        local all       all     trust
-        host  all       all     127.0.0.1/32  trust
-        host  all       all     ::1/128       trust
-      '';
-  };
-
   # Keyring
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.sddm.enableGnomeKeyring = true;
-
-
-  # This and the kernal param "acpi_osi=\"!Windows 2015\"" fixes sleep issues for Gigabyte.
-  # https://wiki.archlinux.org/title/Power_management/Wakeup_triggers#Gigabyte_motherboards
-  services.udev.extraRules = ''
-    ACTION=="add", SUBSYSTEM=="pci", DRIVER=="pcieport", ATTR{power/wakeup}="disabled"
-    ACTION=="add" SUBSYSTEM=="pci" ATTR{vendor}=="0x1022" ATTR{device}=="0x1483" ATTR{power/wakeup}="disabled"
-  '';
-
-  services.solaar = {
-    enable = true;
-    package = pkgs.solaar;
-    window = "hide";
-    batteryIcons = "regular";
-    extraArgs = "";
-  };
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
 }

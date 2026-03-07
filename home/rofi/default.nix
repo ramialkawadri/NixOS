@@ -4,7 +4,7 @@
     enable = true;
     package = pkgs.rofi;
     font = "HackNerdFont 13";
-    theme = ../dotfiles/rofi/theme.rasi;
+    theme = ./config/theme.rasi;
     plugins = [ pkgs.rofi-emoji ];
     extraConfig = {
       modi = "drun,run,filebrowser";

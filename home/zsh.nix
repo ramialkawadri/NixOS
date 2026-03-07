@@ -28,7 +28,14 @@
     };
     oh-my-zsh = {
       enable = true;
-      plugins = [ "tmux" "git" "man" "colored-man-pages" "colorize" "command-not-found" ];
+      plugins = [
+        "tmux"
+        "git"
+        "man"
+        "colored-man-pages"
+        "colorize"
+        "command-not-found"
+      ];
     };
     localVariables = {
       ZSH_TMUX_AUTOSTART = true;

@@ -3,7 +3,7 @@
   programs.git = {
     enable = true;
     config = {
-      user.name  = "Rami Alkawadri";
+      user.name = "Rami Alkawadri";
       user.email = "ramialkawadri@hotmail.com";
       credential.helper = "store";
 

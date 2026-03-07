@@ -10,7 +10,7 @@
 
       background = [
         {
-          path = "${../imgs/background2.jpg}";
+          path = "${./hyprpaper/imgs/background2.jpg}";
           blur_passes = 2;
           blur_size = 4;
         }

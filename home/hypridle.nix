@@ -1,16 +1,16 @@
 { ... }:
 {
-    services.hypridle = {
-      enable = true;
-      settings = {
-        general = {
-          after_sleep_cmd = "hyprctl dispatch dpms on";
-          ignore_dbus_inhibit = false;
-          lock_cmd = "hyprlock";
-          before_sleep_cmd = "hyprlock";
-        };
+  services.hypridle = {
+    enable = true;
+    settings = {
+      general = {
+        after_sleep_cmd = "hyprctl dispatch dpms on";
+        ignore_dbus_inhibit = false;
+        lock_cmd = "hyprlock";
+        before_sleep_cmd = "hyprlock";
+      };
 
-        listener = [
+      listener = [
         {
           # Turn off the monitors automatically.
           timeout = 100;

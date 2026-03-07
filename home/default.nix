@@ -1,45 +1,27 @@
-{ pkgs, ... }:
-
+{ pkgs, username, ... }:
 {
-  imports = 
-    [
-      ./modules/clipse.nix
-      ./modules/theme.nix
-      ./modules/hypridle.nix
-      ./modules/hyprland.nix
-      ./modules/hyprlock.nix
-      ./modules/hyprpaper.nix
-      ./modules/lazygit.nix
-      ./modules/rofi.nix
-      ./modules/swaync.nix
-      ./modules/tmux.nix
-      ./modules/waybar.nix
-      ./modules/zsh.nix
-    ];
+  imports = [
+    ./clipse.nix
+    ./hypridle.nix
+    ./hyprland.nix
+    ./hyprlock.nix
+    ./hyprpaper
+    ./lazygit.nix
+    ./rofi
+    ./swaync.nix
+    ./theme.nix
+    ./tmux.nix
+    ./vlc
+    ./vsnip
+    ./waybar.nix
+    ./zsh.nix
+  ];
 
-  home.username = "ramikw";
-  home.homeDirectory = "/home/ramikw";
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
   xdg = {
     enable = true;
     userDirs.enable = true;
-  };
-
-  home.file.".config/vlc" = {
-    source = ./dotfiles/vlc;
-    recursive = true;
-    force = true;
-  };
-
-  home.file."Pictures/NixOS" = {
-    source = ./imgs;
-    recursive = true;
-    force = true;
-  };
-
-  home.file.".vsnip" = {
-    source = ./dotfiles/vsnip;
-    recursive = true;
-    force = true;
   };
 
   home.pointerCursor = {
@@ -88,7 +70,7 @@
     vlc
     vscode
 
-    baobab  # Disk Usage Analyzer
+    baobab # Disk Usage Analyzer
     gnome-calculator
     gnome-characters
     gnome-clocks
@@ -169,7 +151,7 @@
   ];
 
   home.sessionVariables = {
-      sqlite_clib_path = "${pkgs.sqlite.out}/lib/libsqlite3${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}";
+    sqlite_clib_path = "${pkgs.sqlite.out}/lib/libsqlite3${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}";
   };
 
   home.sessionPath = [

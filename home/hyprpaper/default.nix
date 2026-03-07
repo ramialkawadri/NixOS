@@ -1,5 +1,11 @@
 { ... }:
 {
+  home.file."Pictures/NixOS" = {
+    source = ./imgs;
+    recursive = true;
+    force = true;
+  };
+
   services.hyprpaper = {
     enable = true;
     settings = {
@@ -7,7 +13,7 @@
       wallpaper = [
         {
           monitor = "";
-          path = "${../imgs/background2.jpg}";
+          path = "${./imgs/background2.jpg}";
         }
       ];
     };

@@ -13,37 +13,64 @@
   };
 
   outputs =
-    {
+    inputs@{
       nixpkgs,
       home-manager,
       solaar,
       ...
     }:
-    {
-      nixosConfigurations.ramikw = nixpkgs.lib.nixosSystem {
-        modules = [
-          solaar.nixosModules.default
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.ramikw = import ./home.nix;
-          }
-          ./configuration.nix
-
-          {
-            nixpkgs = {
-              overlays = [
+    let
+      mkSystem =
+        {
+          hostName,
+          username,
+          extraModules ? [ ],
+          extraHomeModules ? [ ],
+        }:
+        nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            inherit username;
+          };
+          modules = [
+            # Adds pkgs.stable
+            {
+              nixpkgs.overlays = [
                 (final: _: {
-                  stable = import nixpkgs {
+                  stable = import inputs.nixpkgs-stable {
                     inherit (final.stdenv.hostPlatform) system;
                     inherit (final) config;
                   };
                 })
               ];
-            };
-          }
-        ];
+            }
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = {
+                username = username;
+              };
+              home-manager.users.${username} = {
+                imports = [ ./home ] ++ extraHomeModules;
+              };
+            }
+
+            ./hosts/common
+            ./hosts/${hostName}
+          ]
+          ++ extraModules;
+        };
+    in
+    {
+      nixosConfigurations = {
+        home-pc = mkSystem {
+          hostName = "home-pc";
+          username = "ramikw";
+          extraModules = [ solaar.nixosModules.default ];
+          extraHomeModules = [ ];
+        };
       };
     };
 }
