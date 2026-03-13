@@ -65,6 +65,7 @@
       "input"
       "uinput"
       "docker"
+      "kvm"
     ];
     packages = [ ];
   };

@@ -218,6 +218,7 @@
       "$mainMod, code:60, exec, rofi -modi emoji -show emoji -emoji-mode insert_no_copy -emoji-format '{emoji}' -theme-str \"listview { columns: 5; }\""
       '', Print, exec, grim -g "$(slurp -d)" - | wl-copy''
       "SUPER, V, exec, kitty --class clipse -e clipse"
+      "SUPER, N, exec, swaync-client -t -sw"
 
       # Move focus with mainMod + arrow keys
       "$mainMod, left, movefocus, l"
