@@ -56,7 +56,6 @@ prompt {
 }
 
 entry {
-    placeholder:        "  Search";
     placeholder-color:  @fg3;
 }
 
