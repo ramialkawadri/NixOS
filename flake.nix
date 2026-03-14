@@ -72,6 +72,13 @@
           username = "ramikw";
           extraModules = [ solaar.nixosModules.default ];
         };
+
+        acer-laptop = mkSystem {
+          hostName = "acer-laptop";
+          username = "ramikw";
+          extraModules = [];
+        };
+
       };
     };
 }
