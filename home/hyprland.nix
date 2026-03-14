@@ -28,7 +28,7 @@
     ### AUTOSTART ###
     #################
 
-    exec-once = [
+    exec-once = lib.mkBefore [
       "waybar & hyprpaper & hypridle"
       "systemctl --user start hyprpolkitagent"
       # Adding some sleep time to way for waybar to start
@@ -38,8 +38,6 @@
       ''hyprctl setcursor "Adwaita" 24''
 
       "[workspace 1 silent] brave"
-      "[workspace 4 silent] anki"
-      "[workspace 4 silent] gnome-clocks"
     ];
 
     #####################

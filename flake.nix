@@ -25,7 +25,6 @@
           hostName,
           username,
           extraModules ? [ ],
-          extraHomeModules ? [ ],
         }:
         nixpkgs.lib.nixosSystem {
           specialArgs = {
@@ -53,7 +52,10 @@
                 username = username;
               };
               home-manager.users.${username} = {
-                imports = [ ./home ] ++ extraHomeModules;
+                imports = [
+                  ./home
+                  ./hosts/${hostName}/home
+                ];
               };
             }
 
@@ -69,7 +71,6 @@
           hostName = "home-pc";
           username = "ramikw";
           extraModules = [ solaar.nixosModules.default ];
-          extraHomeModules = [ ];
         };
       };
     };
