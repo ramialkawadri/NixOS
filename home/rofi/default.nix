@@ -1,11 +1,15 @@
 { pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    rofi-network-manager
+  ];
+
   programs.rofi = {
     enable = true;
     package = pkgs.rofi;
     font = "HackNerdFont 13";
     theme = ./config/theme.rasi;
-    plugins = [ pkgs.rofi-emoji ];
+    plugins = with pkgs; [ rofi-emoji ];
     extraConfig = {
       modi = "drun,run,filebrowser";
       case-sensitive = false;

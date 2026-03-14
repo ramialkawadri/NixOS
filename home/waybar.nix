@@ -21,6 +21,7 @@
         ];
 
         network = {
+          on-click = "rofi-network-manager";
           format = "{ifname}";
           format-wifi = "{signalStrength}% ";
           format-ethernet = "󰛳";

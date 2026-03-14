@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ pkgs, lib, username, ... }:
 {
   imports = [
     ./clipse.nix
@@ -51,7 +51,7 @@
     };
   };
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs; lib.mkBefore [
     tmuxinator
 
     hunspell
