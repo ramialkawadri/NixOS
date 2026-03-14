@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -9,7 +9,7 @@
 
   wayland.windowManager.hyprland.settings = {
 
-    env = [
+    env = lib.mkDefault [
       "XCURSOR_SIZE,24"
       "HYPRCURSOR_SIZE,24"
       "HYPRCURSOR_THEME,Adwaita"
@@ -20,7 +20,7 @@
       "ELECTRON_OZONE_PLATFORM_HINT,auto"
     ];
 
-    monitor = [
+    monitor = lib.mkDefault [
       ", highrr, auto, 1, bitdepth, 10"
     ];
 
