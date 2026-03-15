@@ -18,6 +18,8 @@
       show-icons = true;
       display-drun = "";
       hover-select = true;
+      # Closes on outside click.
+      kb-cancel = "Escape,MousePrimary";
     };
   };
 }
