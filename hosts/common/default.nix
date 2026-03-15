@@ -53,7 +53,10 @@
   # Networking
   networking.hostName = username;
   networking.networkmanager.enable = true;
-  networking.firewall.enable = true;
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 1420 ]; # Tauri
+  };
 
   # Other
   users.users.${username} = {
