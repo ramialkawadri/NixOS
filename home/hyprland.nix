@@ -130,6 +130,10 @@
       };
     };
 
+    gesture = [
+      "3, horizontal, workspace"
+    ];
+
     ##############################
     ### WINDOWS AND WORKSPACES ###
     ##############################
