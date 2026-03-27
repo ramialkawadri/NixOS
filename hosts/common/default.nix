@@ -42,7 +42,8 @@
   boot.consoleLogLevel = 0;
 
   # Language
-  time.timeZone = "Europe/Oslo";
+  services.chrony.enable = true;
+  services.automatic-timezoned.enable = true;
   i18n.defaultLocale = "en_US.UTF-8";
   console.keyMap = "no";
   services.xserver.xkb = {
