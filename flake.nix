@@ -25,6 +25,7 @@
           hostName,
           username,
           extraModules ? [ ],
+          isLaptop ? false,
         }:
         nixpkgs.lib.nixosSystem {
           specialArgs = {
@@ -62,6 +63,7 @@
             ./hosts/common
             ./hosts/${hostName}
           ]
+          ++ (if isLaptop then [ ./hosts/common-laptop ] else [ ])
           ++ extraModules;
         };
     in
@@ -76,7 +78,8 @@
         acer-laptop = mkSystem {
           hostName = "acer-laptop";
           username = "ramikw";
-          extraModules = [];
+          isLaptop = true;
+          extraModules = [ ];
         };
 
       };
