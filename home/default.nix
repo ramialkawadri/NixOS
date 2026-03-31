@@ -1,4 +1,9 @@
-{ pkgs, lib, username, ... }:
+{
+  pkgs,
+  lib,
+  username,
+  ...
+}:
 {
   imports = [
     ./clipse.nix
@@ -14,15 +19,12 @@
     ./vlc
     ./vsnip
     ./waybar.nix
+    ./xdg.nix
     ./zsh.nix
   ];
 
   home.username = username;
   home.homeDirectory = "/home/${username}";
-  xdg = {
-    enable = true;
-    userDirs.enable = true;
-  };
 
   home.pointerCursor = {
     name = "Adwaita";
@@ -51,104 +53,106 @@
     };
   };
 
-  home.packages = with pkgs; lib.mkBefore [
-    tmuxinator
+  home.packages =
+    with pkgs;
+    lib.mkBefore [
+      tmuxinator
 
-    hunspell
-    hunspellDicts.nb_NO
-    hunspellDicts.en_US
-    libreoffice
+      hunspell
+      hunspellDicts.nb_NO
+      hunspellDicts.en_US
+      libreoffice
 
-    anki
-    discord
-    drawio
-    gimp3
-    megasync
-    mpv
-    shotcut
-    thunderbird
-    vlc
-    vscode
+      anki
+      discord
+      drawio
+      gimp3
+      megasync
+      mpv
+      shotcut
+      thunderbird
+      vlc
+      vscode
 
-    baobab # Disk Usage Analyzer
-    gnome-calculator
-    gnome-characters
-    gnome-clocks
-    gnome-disk-utility
-    gnome-font-viewer
-    gnome-logs
-    gnome-text-editor
-    loupe
-    mission-center
-    nautilus
-    papers
-    simple-scan
+      baobab # Disk Usage Analyzer
+      gnome-calculator
+      gnome-characters
+      gnome-clocks
+      gnome-disk-utility
+      gnome-font-viewer
+      gnome-logs
+      gnome-text-editor
+      loupe
+      mission-center
+      nautilus
+      papers
+      simple-scan
 
-    azure-cli
-    azurite
-    bicep
-    cargo
-    clippy
-    csharpier
-    delta
-    docker-compose
-    dotnet-sdk_10
-    fzf
-    gcc
-    grcov
-    grpc
-    jdk
-    kubectl
-    minikube
-    nodejs
-    postman
-    protobuf_29
-    protols
-    rustc
-    rustfmt
-    sqlite
-    vscode-extensions.vadimcn.vscode-lldb
+      azure-cli
+      azurite
+      bicep
+      cargo
+      clippy
+      csharpier
+      delta
+      docker-compose
+      dotnet-sdk_10
+      fzf
+      gcc
+      grcov
+      grpc
+      jdk
+      kubectl
+      minikube
+      nodejs
+      postman
+      protobuf_29
+      protols
+      rustc
+      rustfmt
+      sqlite
+      vscode-extensions.vadimcn.vscode-lldb
 
-    # Neovim lsps and treesitter
-    bash-language-server
-    bibtex-tidy
-    clang-tools
-    dockerfile-language-server
-    emmet-ls
-    eslint
-    gdb
-    hyprls
-    jdt-language-server
-    jupyter
-    ltex-ls
-    lua-language-server
-    netcoredbg
-    nil
-    python313Packages.debugpy
-    python313Packages.python-lsp-server
-    roslyn-ls
-    rust-analyzer
-    texlab
-    tree-sitter
-    typescript-language-server
-    vim-language-server
-    vimPlugins.nvim-treesitter.withAllGrammars
-    vscode-langservers-extracted
+      # Neovim lsps and treesitter
+      bash-language-server
+      bibtex-tidy
+      clang-tools
+      dockerfile-language-server
+      emmet-ls
+      eslint
+      gdb
+      hyprls
+      jdt-language-server
+      jupyter
+      ltex-ls
+      lua-language-server
+      netcoredbg
+      nil
+      python313Packages.debugpy
+      python313Packages.python-lsp-server
+      roslyn-ls
+      rust-analyzer
+      texlab
+      tree-sitter
+      typescript-language-server
+      vim-language-server
+      vimPlugins.nvim-treesitter.withAllGrammars
+      vscode-langservers-extracted
 
-    # Hyprland
-    avizo
-    hypridle
-    hyprpaper
-    hyprpicker
-    hyprpolkitagent
-    nwg-look
-    pavucontrol
-    playerctl
+      # Hyprland
+      avizo
+      hypridle
+      hyprpaper
+      hyprpicker
+      hyprpolkitagent
+      nwg-look
+      pavucontrol
+      playerctl
 
-    # Screenshot
-    grim
-    slurp
-  ];
+      # Screenshot
+      grim
+      slurp
+    ];
 
   home.sessionVariables = {
     sqlite_clib_path = "${pkgs.sqlite.out}/lib/libsqlite3${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}";
