@@ -198,6 +198,8 @@
     HandleLidSwitch = "suspend";
     HandleLidSwitchExternalPower = "suspend";
     HandleLidSwitchDocked = "ignore";
+
+    HandlePowerKey = "suspend";
   };
 
   # Keyring
