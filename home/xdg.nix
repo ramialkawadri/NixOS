@@ -30,6 +30,19 @@
         "image/svg+xml" = [ "org.gnome.Loupe.desktop" ];
         "image/avif" = [ "org.gnome.Loupe.desktop" ];
         "image/heic" = [ "org.gnome.Loupe.desktop" ];
+
+        # Videos
+        "video/mp4" = [ "mpv.desktop" ];
+        "video/mkv" = [ "mpv.desktop" ];
+        "video/webm" = [ "mpv.desktop" ];
+        "video/avi" = [ "mpv.desktop" ];
+        "video/mov" = [ "mpv.desktop" ];
+        "video/wmv" = [ "mpv.desktop" ];
+        "video/flv" = [ "mpv.desktop" ];
+        "video/mpeg" = [ "mpv.desktop" ];
+        "video/x-matroska" = [ "mpv.desktop" ];
+        "video/quicktime" = [ "mpv.desktop" ];
+        "video/x-msvideo" = [ "mpv.desktop" ];
       };
     };
   };
