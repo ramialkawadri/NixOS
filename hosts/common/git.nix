@@ -6,6 +6,7 @@
       user.name = "Rami Alkawadri";
       user.email = "ramialkawadri@hotmail.com";
       credential.helper = "store";
+      core.askpass = ""; # Don't use X11 askpass UI.
 
       interactive = {
         diffFilter = "delta --color-only";
