@@ -111,6 +111,7 @@
       vrr = 2;
       font_family = "HackNerdFont";
       middle_click_paste = false;
+      allow_session_lock_restore = true;
     };
 
     #############
