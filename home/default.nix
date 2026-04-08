@@ -111,6 +111,7 @@
       rustc
       rustfmt
       sqlite
+      tree-sitter
       vscode-extensions.vadimcn.vscode-lldb
 
       # Neovim lsps and treesitter
