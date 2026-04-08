@@ -2,7 +2,11 @@
 {
   xdg = {
     enable = true;
-    userDirs.enable = true;
+    userDirs = {
+      enable = true;
+      setSessionVariables = false;
+    };
+
     mimeApps = {
       enable = true;
       defaultApplications = lib.mkBefore {
