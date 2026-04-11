@@ -81,6 +81,7 @@
       gnome-disk-utility
       gnome-font-viewer
       gnome-logs
+      gnome-sound-recorder
       gnome-text-editor
       loupe
       mission-center
