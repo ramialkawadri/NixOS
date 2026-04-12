@@ -1,10 +1,19 @@
-{ lib, ... }:
+{ pkgs, lib, ... }:
 {
   xdg = {
     enable = true;
     userDirs = {
       enable = true;
       setSessionVariables = false;
+    };
+
+    portal = {
+      xdgOpenUsePortal = true;
+      extraPortals = lib.mkForce [
+        pkgs.xdg-desktop-portal-gtk
+        pkgs.xdg-desktop-portal-hyprland
+        pkgs.xdg-desktop-portal-gnome
+      ];
     };
 
     mimeApps = {

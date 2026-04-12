@@ -138,15 +138,6 @@
     }/share/sddm/themes/sddm-astronaut-theme";
   };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = lib.mkForce [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gnome
-    ];
-  };
-
   # Other settings
   services.cron.enable = true;
   services.blueman.enable = true;
